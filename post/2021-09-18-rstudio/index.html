@@ -49,7 +49,7 @@
 <meta itemprop="name" content="用rstudio搭博客">
 <meta itemprop="description" content="这个博客是用 rstudio 的 blogdown 包搭建的。 在github中创建名为 用户名.github.io 的 Repo 这是为了弄到一个免费的网址。创建一个名为xx的repo，然"><meta itemprop="datePublished" content="2021-09-18T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-09-18T21:48:23+02:00" />
-<meta itemprop="wordCount" content="1291">
+<meta itemprop="wordCount" content="1289">
 <meta itemprop="keywords" content="r," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="用rstudio搭博客"/>
 <meta name="twitter:description" content="这个博客是用 rstudio 的 blogdown 包搭建的。 在github中创建名为 用户名.github.io 的 Repo 这是为了弄到一个免费的网址。创建一个名为xx的repo，然"/>
@@ -181,7 +181,7 @@
 <h3 id="在rstudio里建立project">在rstudio里建立project</h3>
 <p>打开rstudio -&gt; File -&gt; New Project -&gt; New Directory -&gt; Website using blogdown,在Directory name 里填写一个好记的名字存放博客文件，比如blog。点击<code>Browse...</code>选一个电脑路径。这样rstudio就会建在这个路径下建一个blog文件夹，这个文件夹里面会放所有的格式设置文件以及博客帖子的文字以及生成的网页。 在Hugo theme里输入喜欢的模板在github里的名字，以我的模板<code>Even</code>为例，用谷歌一搜我就找到了<a href="https://github.com/olOwOlo/hugo-theme-even">它在github里的网址</a>，打开网页就可以看到左上角这个作者的用户名和这个Repo 的名字，复制它，在theme后面输入<code>olOwOlo/hugo-theme-even themes/even</code>这时候双击打开blog文件夹，会发现里面有一个叫<code>blog.Rproj</code>的文件，以后每次想在rstudio里对博客做什么操作双击打开这个文件就好了<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。 <img src="images/Snipaste_2021-09-18_22-49-25.jpg" alt=""></p>
 <h3 id="编译网页文件">编译网页文件</h3>
-<p>打开<code>blog.Rproj</code>文件，在 rstudio上面找到Addins，点击Serve Site, 就可以在右下角的Viewer中预览网页了。运行<code>blogdown::hugo_build()</code>，编译网页文件。这时候<code>blog</code>文件夹里会多出一个<code>public</code>文件夹，里面正有我们所需要的`index.html`文件<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。
+<p>打开<code>blog.Rproj</code>文件，在 rstudio上面找到Addins，点击Serve Site, 就可以在右下角的Viewer中预览网页了。运行<code>blogdown::hugo_build()</code>，编译网页文件。这时候<code>blog</code>文件夹里会多出一个<code>public</code>文件夹，里面正有我们所需要的<code>index.html</code>文件<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。
 <img src="images/Snipaste_2021-09-18_22-52-13.jpg" alt=""></p>
 <h3 id="添加新的博客帖子">添加新的博客帖子</h3>
 <p>Addins -&gt; New Post</p>
