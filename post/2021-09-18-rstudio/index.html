@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="olOwOlo" /><meta name="description" content="这个博客是用 rstudio 的 blogdown 包搭建的。 在github中创建名为 用户名.github.io 的 Repo 这是为了弄到一个免费的网址。创建一个名为xx的repo，然" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="olOwOlo" /><meta name="description" content="用 rstudio 的 blogdown 包搭建博客。重要命令： 1 2 blogdown::hugo_build() git push -u origin main 在github中创建名为 用户名.github.io 的 Repo 这是为了弄到一个免费的网址。创建一个名为" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="用rstudio搭博客" />
-<meta property="og:description" content="这个博客是用 rstudio 的 blogdown 包搭建的。 在github中创建名为 用户名.github.io 的 Repo 这是为了弄到一个免费的网址。创建一个名为xx的repo，然" />
+<meta property="og:description" content="用 rstudio 的 blogdown 包搭建博客。重要命令： 1 2 blogdown::hugo_build() git push -u origin main 在github中创建名为 用户名.github.io 的 Repo 这是为了弄到一个免费的网址。创建一个名为" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/2021-09-18-rstudio/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-09-18T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-09-18T21:48:23+02:00" />
 
 <meta itemprop="name" content="用rstudio搭博客">
-<meta itemprop="description" content="这个博客是用 rstudio 的 blogdown 包搭建的。 在github中创建名为 用户名.github.io 的 Repo 这是为了弄到一个免费的网址。创建一个名为xx的repo，然"><meta itemprop="datePublished" content="2021-09-18T00:00:00+00:00" />
+<meta itemprop="description" content="用 rstudio 的 blogdown 包搭建博客。重要命令： 1 2 blogdown::hugo_build() git push -u origin main 在github中创建名为 用户名.github.io 的 Repo 这是为了弄到一个免费的网址。创建一个名为"><meta itemprop="datePublished" content="2021-09-18T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-09-18T21:48:23+02:00" />
-<meta itemprop="wordCount" content="1289">
+<meta itemprop="wordCount" content="1297">
 <meta itemprop="keywords" content="r," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="用rstudio搭博客"/>
-<meta name="twitter:description" content="这个博客是用 rstudio 的 blogdown 包搭建的。 在github中创建名为 用户名.github.io 的 Repo 这是为了弄到一个免费的网址。创建一个名为xx的repo，然"/>
+<meta name="twitter:description" content="用 rstudio 的 blogdown 包搭建博客。重要命令： 1 2 blogdown::hugo_build() git push -u origin main 在github中创建名为 用户名.github.io 的 Repo 这是为了弄到一个免费的网址。创建一个名为"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -144,26 +144,30 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#在github中创建名为-用户名githubio-的-repo">在github中创建名为 <code>用户名.github.io</code> 的 Repo</a></li>
-    <li><a href="#下载-r-和-rstudio-并安装-blogdown-包">下载 r 和 rstudio 并安装 blogdown 包</a>
-      <ul>
-        <li><a href="#找一个自己喜欢的模板然后套上">找一个自己喜欢的模板，然后套上</a>
-          <ul>
-            <li><a href="#在rstudio里建立project">在rstudio里建立project</a></li>
-            <li><a href="#编译网页文件">编译网页文件</a></li>
-            <li><a href="#添加新的博客帖子">添加新的博客帖子</a></li>
-            <li><a href="#复制public里的文件到github">复制public里的文件到github</a></li>
-            <li><a href="#用git上传">用git上传</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#下载-r-和-rstudio-并安装-blogdown-包">下载 r 和 rstudio 并安装 blogdown 包</a></li>
+    <li><a href="#找一个自己喜欢的模板然后套上">找一个自己喜欢的模板，然后套上</a></li>
+    <li><a href="#在rstudio里建立project">在rstudio里建立project</a></li>
+    <li><a href="#编译网页文件">编译网页文件</a></li>
+    <li><a href="#添加新的博客帖子">添加新的博客帖子</a></li>
+    <li><a href="#复制public里的文件到github">复制public里的文件到github</a></li>
+    <li><a href="#用git上传">用git上传</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <p>这个博客是用 rstudio 的 blogdown 包搭建的。</p>
-<h1 id="在github中创建名为-用户名githubio-的-repo">在github中创建名为 <code>用户名.github.io</code> 的 Repo</h1>
+      <p>用 rstudio 的 blogdown 包搭建博客。重要命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">blogdown::hugo_build()
+git push -u origin main
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="在github中创建名为-用户名githubio-的-repo">在github中创建名为 <code>用户名.github.io</code> 的 Repo</h1>
 <p>这是为了弄到一个免费的网址。创建一个名为xx的repo，然后在repo里创建名为index.html的网页文件，这个网页就可以通过网址xxxx打开。我的github账号叫 hammerflyhub，所以我的repo是hammerflyhub.github.io, 而我的博客网址就是<a href="https://hammerflyhub.github.io/">https://hammerflyhub.github.io/</a>。 <a href="https://pages.github.com/"><img src="images/Snipaste_2021-09-18_22-24-14.jpg" alt=""></a></p>
 <h1 id="下载-r-和-rstudio-并安装-blogdown-包">下载 r 和 rstudio 并安装 blogdown 包</h1>
 <p>创建博客当然有更简单的方法，不过我电脑上正好有 r 和 rstudio 所以干脆就用这两个了。下载安装好 r 和 rstudio 后打开 rstudio, 然后在 Console 里输入</p>
@@ -176,18 +180,17 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>之后按回车就可以安装blogdown包了。</p>
-<h2 id="找一个自己喜欢的模板然后套上">找一个自己喜欢的模板，然后套上</h2>
+<h1 id="找一个自己喜欢的模板然后套上">找一个自己喜欢的模板，然后套上</h1>
 <p>blogdown包默认使用的是 Hugo,大概就是一个能够把文字按照一些模板编译成网页的程序。 我们可以从<a href="https://themes.gohugo.io/">hugo的网站</a>上找一个自己喜欢的模板。我选择了Even模板</p>
-<h3 id="在rstudio里建立project">在rstudio里建立project</h3>
+<h1 id="在rstudio里建立project">在rstudio里建立project</h1>
 <p>打开rstudio -&gt; File -&gt; New Project -&gt; New Directory -&gt; Website using blogdown,在Directory name 里填写一个好记的名字存放博客文件，比如blog。点击<code>Browse...</code>选一个电脑路径。这样rstudio就会建在这个路径下建一个blog文件夹，这个文件夹里面会放所有的格式设置文件以及博客帖子的文字以及生成的网页。 在Hugo theme里输入喜欢的模板在github里的名字，以我的模板<code>Even</code>为例，用谷歌一搜我就找到了<a href="https://github.com/olOwOlo/hugo-theme-even">它在github里的网址</a>，打开网页就可以看到左上角这个作者的用户名和这个Repo 的名字，复制它，在theme后面输入<code>olOwOlo/hugo-theme-even themes/even</code>这时候双击打开blog文件夹，会发现里面有一个叫<code>blog.Rproj</code>的文件，以后每次想在rstudio里对博客做什么操作双击打开这个文件就好了<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。 <img src="images/Snipaste_2021-09-18_22-49-25.jpg" alt=""></p>
-<h3 id="编译网页文件">编译网页文件</h3>
-<p>打开<code>blog.Rproj</code>文件，在 rstudio上面找到Addins，点击Serve Site, 就可以在右下角的Viewer中预览网页了。运行<code>blogdown::hugo_build()</code>，编译网页文件。这时候<code>blog</code>文件夹里会多出一个<code>public</code>文件夹，里面正有我们所需要的<code>index.html</code>文件<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。
-<img src="images/Snipaste_2021-09-18_22-52-13.jpg" alt=""></p>
-<h3 id="添加新的博客帖子">添加新的博客帖子</h3>
+<h1 id="编译网页文件">编译网页文件</h1>
+<p>打开<code>blog.Rproj</code>文件，在 rstudio上面找到Addins，点击Serve Site, 就可以在右下角的Viewer中预览网页了。运行<code>blogdown::hugo_build()</code>，编译网页文件。这时候<code>blog</code>文件夹里会多出一个<code>public</code>文件夹，里面正有我们所需要的<code>index.html</code>文件<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。 <img src="images/Snipaste_2021-09-18_22-52-13.jpg" alt=""></p>
+<h1 id="添加新的博客帖子">添加新的博客帖子</h1>
 <p>Addins -&gt; New Post</p>
-<h3 id="复制public里的文件到github">复制public里的文件到github</h3>
+<h1 id="复制public里的文件到github">复制public里的文件到github</h1>
 <p>把public里的文件全部上传到github, 然后访问https://用户名.github.io/,就可以看到自己的博客了。</p>
-<h3 id="用git上传">用git上传</h3>
+<h1 id="用git上传">用git上传</h1>
 <p>也可以用git上传新的文件。</p>
 <ol>
 <li><a href="https://git-scm.com/downloads">下载git</a>。</li>
@@ -201,8 +204,10 @@
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">git init
 </code></pre></td></tr></table>
 </div>
-</div><p>此操作会在文件夹中新建一个隐藏文件夹<code>.git</code>
-3. 保存更改</p>
+</div><p>此操作会在文件夹中新建一个隐藏文件夹<code>.git</code></p>
+<ol>
+<li>保存更改</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -213,7 +218,7 @@
 git commit -m &#34;提交信息&#34;
 </code></pre></td></tr></table>
 </div>
-</div><ol start="4">
+</div><ol>
 <li>上传文件。第一次使用前需要找到自己github上Repo代码的网址。点击Code-&gt;复制网址，替换命令<code>git remote add origin http://github.com/xxxxx/xxxxx.git</code>中的网址，之后不用再运行这条命令<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>。</li>
 </ol>
 <div class="highlight"><div class="chroma">
