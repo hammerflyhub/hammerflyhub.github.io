@@ -83,10 +83,6 @@
         <li class="mobile-menu-item">Archives</li>
       </a><a href="/tags/">
         <li class="mobile-menu-item">Tags</li>
-      </a><a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/about/">
-        <li class="mobile-menu-item">About</li>
       </a>
   </ul>
 
@@ -113,10 +109,6 @@
         <a class="menu-item-link" href="/post/">Archives</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about/">About</a>
       </li>
   </ul>
 </nav>
@@ -168,7 +160,7 @@ git push -u origin main
 </code></pre></td></tr></table>
 </div>
 </div><h1 id="在github中创建名为-用户名githubio-的-repo">在github中创建名为 <code>用户名.github.io</code> 的 Repo</h1>
-<p>这是为了弄到一个免费的网址。创建一个名为<code>用户名.github.io</code>的repo，然后在repo里创建名为<code>index.html</code>的网页文件。我的github账号叫 hammerflyhub，所以我的repo是hammerflyhub.github.io, 而我的博客网址就是<a href="https://hammerflyhub.github.io/">https://hammerflyhub.github.io/</a>。 <a href="https://pages.github.com/"><img src="images/Snipaste_2021-09-18_22-24-14.jpg" alt=""></a></p>
+<p>这是为了弄到一个免费的网址。创建一个名为<code>用户名.github.io</code>的repo，然后在repo里创建名为<code>index.html</code>的网页文件。我的github账号叫 hammerflyhub，所以我的repo是hammerflyhub.github.io, 而我的博客网址就是https://hammerflyhub.github.io/。 <a href="https://pages.github.com/"><img src="images/Snipaste_2021-09-18_22-24-14.jpg" alt=""></a></p>
 <h1 id="下载-r-和-rstudio-并安装-blogdown-包">下载 r 和 rstudio 并安装 blogdown 包</h1>
 <p>创建博客当然有更简单的方法，不过我电脑上正好有 r 和 rstudio 所以干脆就用这两个了。下载安装好 r 和 rstudio 后打开 rstudio, 然后在 Console 里输入</p>
 <div class="highlight"><div class="chroma">
@@ -183,7 +175,7 @@ git push -u origin main
 <h1 id="找一个自己喜欢的模板然后套上">找一个自己喜欢的模板，然后套上</h1>
 <p>blogdown包默认使用的是 Hugo,大概就是一个能够把文字按照一些模板编译成网页的程序。 我们可以从<a href="https://themes.gohugo.io/">hugo的网站</a>上找一个自己喜欢的模板。我选择了Even模板</p>
 <h1 id="在rstudio里建立project">在rstudio里建立project</h1>
-<p>打开rstudio -&gt; File -&gt; New Project -&gt; New Directory -&gt; Website using blogdown,在Directory name 里填写一个好记的名字存放博客文件，比如blog。点击<code>Browse...</code>选一个电脑路径。这样rstudio就会建在这个路径下建一个blog文件夹，这个文件夹里面会放所有的格式设置文件以及博客帖子的文字以及生成的网页。 在Hugo theme里输入喜欢的模板在github里的名字，以我的模板<code>Even</code>为例，用谷歌一搜我就找到了<a href="https://github.com/olOwOlo/hugo-theme-even">它在github里的网址</a>，打开网页就可以看到左上角这个作者的用户名和这个Repo 的名字，复制它，在theme后面输入<code>olOwOlo/hugo-theme-even themes/even</code>这时候双击打开blog文件夹，会发现里面有一个叫<code>blog.Rproj</code>的文件，以后每次想在rstudio里对博客做什么操作双击打开这个文件就好了<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。 <img src="images/Snipaste_2021-09-18_22-49-25.jpg" alt=""></p>
+<p>打开rstudio -&gt; File -&gt; New Project -&gt; New Directory -&gt; Website using blogdown,在Directory name 里填写一个好记的名字存放博客文件，比如<code>blog</code>。点击<code>Browse...</code>选一个电脑路径。这样rstudio就会建在这个路径下建一个blog文件夹，这个文件夹里面会放所有的格式设置文件以及博客帖子的文字以及生成的网页。 在Hugo theme里输入喜欢的模板在github里的名字，以我的模板<code>Even</code>为例，用谷歌一搜我就找到了<a href="https://github.com/olOwOlo/hugo-theme-even">它在github里的网址</a>，打开网页就可以看到左上角这个作者的用户名和这个Repo 的名字，复制它，在theme后面输入<code>olOwOlo/hugo-theme-even themes/even</code>这时候双击打开blog文件夹，会发现里面有一个叫<code>blog.Rproj</code>的文件，以后每次想在rstudio里对博客做什么操作双击打开这个文件就好了<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。 <img src="images/Snipaste_2021-09-18_22-49-25.jpg" alt=""></p>
 <h1 id="编译网页文件">编译网页文件</h1>
 <p>打开<code>blog.Rproj</code>文件，在 rstudio上面找到Addins，点击Serve Site, 就可以在右下角的Viewer中预览网页了。运行<code>blogdown::hugo_build()</code>，编译网页文件。这时候<code>blog</code>文件夹里会多出一个<code>public</code>文件夹，里面正有我们所需要的<code>index.html</code>文件<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。 <img src="images/Snipaste_2021-09-18_22-52-13.jpg" alt=""></p>
 <h1 id="添加新的博客帖子">添加新的博客帖子</h1>
@@ -263,16 +255,8 @@ git push -u origin main
           <a href="/tags/r/">r</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/even-preview/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Theme preview</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/2020-12-01-r-rmarkdown/">
-            <span class="next-text nav-default">Hello R Markdown</span>
-            <span class="next-text nav-mobile">Next</span>
-            <i class="iconfont icon-right"></i>
-          </a>
+        
+        
       </nav>
     </footer>
   </article>
