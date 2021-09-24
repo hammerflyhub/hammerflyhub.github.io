@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Hammerfly&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 18 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>拖延自救指南</title>
+      <link>http://localhost:1313/post/2021-09-24-procrastination/</link>
+      <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/2021-09-24-procrastination/</guid>
+      <description>{&#34;x&#34;:{&#34;diagram&#34;:&#34;graph LR\nA[有正在拖延的事] --|否| B[Level 2]\nA -- |是| C[Level1]\nC -- B\n&#34;},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]} Level 1 如果现在有正在拖延的事，缓慢地吸气、呼气，把那个任务写在纸上或者手机上，然后直</description>
+    </item>
+    
     <item>
       <title>用rstudio搭博客</title>
       <link>http://localhost:1313/post/2021-09-18-rstudio/</link>
