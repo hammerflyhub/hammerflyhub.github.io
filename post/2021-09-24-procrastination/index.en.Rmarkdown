@@ -22,10 +22,6 @@ flowchartDiagrams:
 sequenceDiagrams:
   enable: no
   options: ''
-output:
-  blogdown::html_page:
-    toc: true
-    toc_float: true
 ---
 
 ```{r,echo=FALSE}
