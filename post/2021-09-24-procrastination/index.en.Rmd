@@ -24,6 +24,9 @@ flowchartDiagrams:
 sequenceDiagrams:
   enable: no
   options: ''
+output:
+  blogdown::html_page:
+    toc: true
 ---
 
 ```{r,echo=FALSE}
