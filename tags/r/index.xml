@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>r on Hammerfly&#39;s blog</title>
-    <link>http://localhost:1313/tags/r/</link>
+    <link>https://hammerflyhub.github.io/tags/r/</link>
     <description>Recent content in r on Hammerfly&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 18 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hammerflyhub.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>用rstudio搭博客</title>
-      <link>http://localhost:1313/post/2021-09-18-rstudio/</link>
+      <link>https://hammerflyhub.github.io/post/2021-09-18-rstudio/</link>
       <pubDate>Sat, 18 Sep 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/2021-09-18-rstudio/</guid>
+      <guid>https://hammerflyhub.github.io/post/2021-09-18-rstudio/</guid>
       <description>用 rstudio 的 blogdown 包搭建博客。重要命令： 1 2 blogdown::hugo_build() git push -u origin main 在github中创建名为 用户名.github.io 的 Repo 这是为了弄到一个免费的网址。创建一个名为</description>
     </item>
     
