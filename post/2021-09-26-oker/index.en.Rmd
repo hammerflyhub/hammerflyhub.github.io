@@ -51,4 +51,6 @@ knitr::include_graphics("images/OkerInBS96dpi.jpg")
 knitr::include_graphics("images/800px-Braunschweig_1400_Okerverlauf.jpg")
 knitr::include_graphics("images/800px-Braunschweig_um_1400_Weichbilde_Titel.png")
 ```
+
+从公元968年开始经营的Goslar附近的矿山Rammelsberg开采中产生的硫酸一度使奥克河成为一条毒河，也使河中的三文鱼灭绝。但20世纪九十年代以来通过人工放生现在的奥克河又重新有了三文鱼，而布伦瑞克的游客和居民也可以租一条小船悠闲地饶河一周，或是在河中泡水嬉戏，享受河水的凉爽和河岸的美景。
 [^3]:https://de.wikipedia.org/wiki/Weichbild
