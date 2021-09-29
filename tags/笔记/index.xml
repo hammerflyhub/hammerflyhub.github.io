@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>笔记 on Hammerfly&#39;s blog</title>
+    <link>https://hammerflyhub.github.io/tags/%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 笔记 on Hammerfly&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 29 Sep 2021 22:24:53 +0200</lastBuildDate><atom:link href="https://hammerflyhub.github.io/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Onenote, Obsidian, Notion, Remnote和Logseq对比</title>
+      <link>https://hammerflyhub.github.io/post/2021-09-29-obsidian-logseq-onenote-notion%E5%92%8Cremnote%E5%AF%B9%E6%AF%94/</link>
+      <pubDate>Wed, 29 Sep 2021 22:24:53 +0200</pubDate>
+      
+      <guid>https://hammerflyhub.github.io/post/2021-09-29-obsidian-logseq-onenote-notion%E5%92%8Cremnote%E5%AF%B9%E6%AF%94/</guid>
+      <description>优点&amp;amp;特色 缺点 Onenote 可以在任何位置写写画画Onedrive多端同步嵌套表格快速记笔记易上手office套装自带 Obsidian 本地保存md文件双链笔记</description>
+    </item>
+    
+  </channel>
+</rss>
