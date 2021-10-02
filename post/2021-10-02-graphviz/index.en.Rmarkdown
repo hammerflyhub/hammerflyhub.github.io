@@ -60,7 +60,7 @@ DiagrammeR::grViz("
 graph G {
  A -- B
 }
-")
+",height=400)
 ```
 
 ## 用箭头连接
@@ -69,7 +69,7 @@ DiagrammeR::grViz("
 digraph G {
  A -> B
 }
-")
+",height=400)
 ```
 
 ## 改变node和edge样式
@@ -82,7 +82,7 @@ digraph G {
  B[color=blue]
  {A,B,C} -> {D,E,F}
 }
-")
+",height=400)
 ```
 
 ## 不要总是一边连到另一边
@@ -92,10 +92,10 @@ digraph G {
  layout=neato;
  A -> {B,C,D,E,F,G,F}
 }
-")
+",height=400)
 ```
 ## 稍微复杂一点的成品
-- splines=false：强制连线是直线，如果出现丑陋的完全可以使用这个命令。
+- splines=false：强制连线是直线，如果出现丑陋的曲线可以使用这个命令。
 - rankdir=LR:从左到右的顺序
 - arrowhead: 箭头形状
 - subgraph: 用框框起来，还可以加字
@@ -140,5 +140,5 @@ color=lightgrey;
 {a b c}->{d e f g}->{h i}
 
 }
-')
+',height=400)
 ```
