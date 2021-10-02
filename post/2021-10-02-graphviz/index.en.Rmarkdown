@@ -27,7 +27,7 @@ sequenceDiagrams:
 在rmarkdown文件中可以使用**DiagrammeR**包插入流程图之类的示意图。可以选择插入Graphviz和Mermaid。
 
 # Mermaid 
-Mermaid语法和很多markdown编辑器比如obsidian里有很好的集成。也可以在线画图，然后导出png或者直接使用生成的链接。网址：https://mermaid.live/
+Mermaid语法和很多markdown编辑器比如obsidian里有很好的集成。也可以在线画图，然后导出png或者直接使用生成的链接。网址：<https://mermaid.live/>
 
 ```{r}
 library(DiagrammeR)
@@ -52,7 +52,7 @@ mermaid("graph LR
 ````
 
 # Graphviz
-而Graphviz并不比Mermaid复杂，除了不会在pdf渲染时出错，在修改颜色形状以及大量连线方面都颇有优势。在线画图网站：https://dreampuf.github.io/GraphvizOnline/
+而Graphviz并不比Mermaid复杂，除了不会在pdf渲染时出错，在修改颜色形状以及大量连线方面都颇有优势。在线画图网站：<https://dreampuf.github.io/GraphvizOnline/>
 
 ## 不用箭头而连线连接
 ```{r}
