@@ -1,0 +1,144 @@
+---
+title: 用DiagrammR包的Graphviz和Mermaid语法画图
+author: ''
+date: '2021-10-02'
+slug: []
+categories: []
+tags:
+  - 代码
+lastmod: '2021-10-02T11:53:58+02:00'
+keywords: []
+description: ''
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+在rmarkdown文件中可以使用**DiagrammeR**包插入流程图之类的示意图。可以选择插入Graphviz和Mermaid。
+
+# Mermaid 
+Mermaid语法和很多markdown编辑器比如obsidian里有很好的集成。也可以在线画图，然后导出png或者直接使用生成的链接。网址：https://mermaid.live/
+
+```{r}
+library(DiagrammeR)
+mermaid("graph LR
+A(( )) -->|否| B[Level 2]
+A --> |是| C[Level1]
+C --> B
+",height='100%',width='100%')
+```
+
+但是Mermaid在rmarkdown中进行pdf渲染时会出现一小块空白。
+![](images/Snipaste_2021-10-02_12-15-02.jpg)
+这里代码为：
+````md
+`r ''````{r,echo=FALSE,dev='png'}
+library(DiagrammeR)
+mermaid("graph LR
+因变量数据正态分布--yes-->lm和glm都行
+因变量数据正态分布--no-->glm
+",height='100%',width='100%')
+```
+````
+
+# Graphviz
+而Graphviz并不比Mermaid复杂，除了不会在pdf渲染时出错，在修改颜色形状以及大量连线方面都颇有优势。在线画图网站：https://dreampuf.github.io/GraphvizOnline/
+
+## 不用箭头而连线连接
+```{r}
+DiagrammeR::grViz("
+graph G {
+ A -- B
+}
+")
+```
+
+## 用箭头连接
+```{r}
+DiagrammeR::grViz("
+digraph G {
+ A -> B
+}
+")
+```
+
+## 改变node和edge样式
+```{r}
+DiagrammeR::grViz("
+digraph G {
+ node [shape=squre,style=filled,color=yellow]
+ edge [style=dotted,color=red]
+ A[color=red]
+ B[color=blue]
+ {A,B,C} -> {D,E,F}
+}
+")
+```
+
+## 不要总是一边连到另一边
+```{r}
+DiagrammeR::grViz("
+digraph G {
+ layout=neato;
+ A -> {B,C,D,E,F,G,F}
+}
+")
+```
+## 稍微复杂一点的成品
+- splines=false：强制连线是直线，如果出现丑陋的完全可以使用这个命令。
+- rankdir=LR:从左到右的顺序
+- arrowhead: 箭头形状
+- subgraph: 用框框起来，还可以加字
+- 注意DiagrammeR::grViz('')最好用单引号，这样里面包含的graphviz的语法就可以用双引号，虽然graphviz语法单引号和双引号都不会影响在rmarkdown里的渲染，但是graphviz的标准格式是双引号。
+
+```{r}
+DiagrammeR::grViz('
+digraph G {
+splines=false;
+rankdir =LR;
+ 
+node [shape = circle,
+       style = filled,
+       color = grey25,
+       label=""]
+edge [color = grey25,arrowhead = vee]
+ 
+subgraph cluster_0{
+node [fillcolor = red3]
+a b c
+label="Eingabeschicht"
+style=filled;
+color=lightgrey;
+}
+ 
+subgraph cluster_1{
+node [fillcolor = blue3]
+d e f g
+label="verborgene Schicht"
+style=filled;
+color=lightgrey;
+}
+
+subgraph cluster_2{
+node [fillcolor = green3]
+h i
+label="输出层"
+style=filled;
+color=lightgrey;
+}
+
+{a b c}->{d e f g}->{h i}
+
+}
+')
+```

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>代码 on Hammerfly&#39;s blog</title>
+    <link>https://hammerflyhub.github.io/tags/%E4%BB%A3%E7%A0%81/</link>
+    <description>Recent content in 代码 on Hammerfly&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 02 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hammerflyhub.github.io/tags/%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用DiagrammR包的Graphviz和Mermaid语法画图</title>
+      <link>https://hammerflyhub.github.io/post/2021-10-02-graphviz/</link>
+      <pubDate>Sat, 02 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hammerflyhub.github.io/post/2021-10-02-graphviz/</guid>
+      <description>在rmarkdown文件中可以使用DiagrammeR包插入流程图之类的示意图。可以选择插入Graphviz和Mermaid。 Mermaid Mermai</description>
+    </item>
+    
+  </channel>
+</rss>
