@@ -16,14 +16,5 @@
       <description>经证实评估拖延的好量表1 我把事情拖到了不合理的时间 对所有事我都是觉得该做了就会去做 我经常后悔没有更早完成任务 对生活中的一些方面我会拖延，尽管</description>
     </item>
     
-    <item>
-      <title>拖延自救指南</title>
-      <link>https://hammerflyhub.github.io/post/2021-09-24-procrastination/</link>
-      <pubDate>Fri, 24 Sep 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://hammerflyhub.github.io/post/2021-09-24-procrastination/</guid>
-      <description>{&#34;x&#34;:{&#34;diagram&#34;:&#34;graph LR\nA[有正在拖延的事] --|否| B[Level 2]\nA -- |是| C[Level1]\nC -- B\n&#34;},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]} Level 1 如果现在有正在拖延的事，缓慢地吸气、呼气，把那个任务写在纸上或者手机上，然后直</description>
-    </item>
-    
   </channel>
 </rss>

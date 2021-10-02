@@ -16,5 +16,14 @@
       <description>在rmarkdown文件中可以使用DiagrammeR包插入流程图之类的示意图。可以选择插入Graphviz和Mermaid。 Mermaid Mermai</description>
     </item>
     
+    <item>
+      <title>用rstudio搭博客</title>
+      <link>https://hammerflyhub.github.io/post/2021-09-18-rstudio/</link>
+      <pubDate>Sat, 18 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://hammerflyhub.github.io/post/2021-09-18-rstudio/</guid>
+      <description>用 rstudio 的 blogdown 包搭建博客。重要命令： 1 git push -u origin main 在github中创建名为 用户名.github.io 的 Repo 这是为了弄到一个免费的网址。创建一个名为用户</description>
+    </item>
+    
   </channel>
 </rss>
