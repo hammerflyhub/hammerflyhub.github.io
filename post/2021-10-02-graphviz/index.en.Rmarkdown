@@ -100,6 +100,7 @@ digraph G {
 - arrowhead: 箭头形状
 - subgraph: 用框框起来，还可以加字
 - 注意DiagrammeR::grViz('')最好用单引号，这样里面包含的graphviz的语法就可以用双引号，虽然graphviz语法单引号和双引号都不会影响在rmarkdown里的渲染，但是graphviz的标准格式是双引号。
+- height=400,width='100%'：这两条命令控制图形的大小。height=400，最大高度为400px，这样窄长型的图比如前两张就不会变得极大。width='100%',宽度最大填满整个容器。这样图片会自动适应屏幕的宽度，用手机看的时候也不会太大。
 
 ```{r}
 DiagrammeR::grViz('
@@ -142,3 +143,4 @@ color=lightgrey;
 }
 ',height=400,width='100%')
 ```
+
