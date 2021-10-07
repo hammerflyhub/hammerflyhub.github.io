@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Hammerfly&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 02 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hammerflyhub.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Oct 2021 18:08:32 +0200</lastBuildDate><atom:link href="https://hammerflyhub.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>notion无法上传文件（已解决）</title>
+      <link>https://hammerflyhub.github.io/post/2021-10-07-notion%E6%97%A0%E6%B3%95%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87-%E5%B7%B2%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Thu, 07 Oct 2021 18:08:32 +0200</pubDate>
+      
+      <guid>https://hammerflyhub.github.io/post/2021-10-07-notion%E6%97%A0%E6%B3%95%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87-%E5%B7%B2%E8%A7%A3%E5%86%B3/</guid>
+      <description>问题描述 I can&amp;rsquo;t upload images in the web version of notion (windows). i&amp;rsquo;ve tried chrome and edge, and i&amp;rsquo;ve tried turning off all browser plugins, nothing works. i can upload images normally from another computer. 解决 I&amp;rsquo;ve figured out what was going on and everything is fine now. It&amp;rsquo;s because my internet is provided by my university and some sites were blocked, including s3.us-west-2.amazonaws.com, where the</description>
+    </item>
+    
     <item>
       <title>用DiagrammR包的Graphviz和Mermaid语法画图</title>
       <link>https://hammerflyhub.github.io/post/2021-10-02-graphviz/</link>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>bug on Hammerfly&#39;s blog</title>
+    <link>https://hammerflyhub.github.io/tags/bug/</link>
+    <description>Recent content in bug on Hammerfly&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 07 Oct 2021 18:08:32 +0200</lastBuildDate><atom:link href="https://hammerflyhub.github.io/tags/bug/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>notion无法上传文件（已解决）</title>
+      <link>https://hammerflyhub.github.io/post/2021-10-07-notion%E6%97%A0%E6%B3%95%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87-%E5%B7%B2%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Thu, 07 Oct 2021 18:08:32 +0200</pubDate>
+      
+      <guid>https://hammerflyhub.github.io/post/2021-10-07-notion%E6%97%A0%E6%B3%95%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87-%E5%B7%B2%E8%A7%A3%E5%86%B3/</guid>
+      <description>问题描述 I can&amp;rsquo;t upload images in the web version of notion (windows). i&amp;rsquo;ve tried chrome and edge, and i&amp;rsquo;ve tried turning off all browser plugins, nothing works. i can upload images normally from another computer. 解决 I&amp;rsquo;ve figured out what was going on and everything is fine now. It&amp;rsquo;s because my internet is provided by my university and some sites were blocked, including s3.us-west-2.amazonaws.com, where the</description>
+    </item>
+    
+  </channel>
+</rss>

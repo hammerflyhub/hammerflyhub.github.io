@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>notion无法上传文件（已解决） - Hammerfly&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Hammerfly" /><meta name="description" content="问题描述 I can&amp;rsquo;t upload images in the web version of notion (windows). i&amp;rsquo;ve tried chrome and edge, and i&amp;rsquo;ve tried turning off all browser plugins, nothing works. i can upload images normally from another computer. 解决 I&amp;rsquo;ve figured out what was going on and everything is fine now. It&amp;rsquo;s because my internet is provided by my university and some sites were blocked, including s3.us-west-2.amazonaws.com, where the" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="https://hammerflyhub.github.io/post/2021-10-07-notion%E6%97%A0%E6%B3%95%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87-%E5%B7%B2%E8%A7%A3%E5%86%B3/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="notion无法上传文件（已解决）" />
+<meta property="og:description" content="问题描述 I can&rsquo;t upload images in the web version of notion (windows). i&rsquo;ve tried chrome and edge, and i&rsquo;ve tried turning off all browser plugins, nothing works. i can upload images normally from another computer. 解决 I&rsquo;ve figured out what was going on and everything is fine now. It&rsquo;s because my internet is provided by my university and some sites were blocked, including s3.us-west-2.amazonaws.com, where the" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hammerflyhub.github.io/post/2021-10-07-notion%E6%97%A0%E6%B3%95%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87-%E5%B7%B2%E8%A7%A3%E5%86%B3/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-07T18:08:32+02:00" />
+<meta property="article:modified_time" content="2021-10-07T18:08:32+02:00" />
+
+<meta itemprop="name" content="notion无法上传文件（已解决）">
+<meta itemprop="description" content="问题描述 I can&rsquo;t upload images in the web version of notion (windows). i&rsquo;ve tried chrome and edge, and i&rsquo;ve tried turning off all browser plugins, nothing works. i can upload images normally from another computer. 解决 I&rsquo;ve figured out what was going on and everything is fine now. It&rsquo;s because my internet is provided by my university and some sites were blocked, including s3.us-west-2.amazonaws.com, where the"><meta itemprop="datePublished" content="2021-10-07T18:08:32+02:00" />
+<meta itemprop="dateModified" content="2021-10-07T18:08:32+02:00" />
+<meta itemprop="wordCount" content="620">
+<meta itemprop="keywords" content="bug," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="notion无法上传文件（已解决）"/>
+<meta name="twitter:description" content="问题描述 I can&rsquo;t upload images in the web version of notion (windows). i&rsquo;ve tried chrome and edge, and i&rsquo;ve tried turning off all browser plugins, nothing works. i can upload images normally from another computer. 解决 I&rsquo;ve figured out what was going on and everything is fine now. It&rsquo;s because my internet is provided by my university and some sites were blocked, including s3.us-west-2.amazonaws.com, where the"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Hammerfly</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Hammerfly</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">notion无法上传文件（已解决）</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-10-07 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#问题描述">问题描述</a></li>
+    <li><a href="#解决">解决</a></li>
+    <li><a href="#笔记">笔记</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="问题描述">问题描述</h1>
+<p>I can&rsquo;t upload images in the web version of notion (windows). i&rsquo;ve tried chrome and edge, and i&rsquo;ve tried turning off all browser plugins, nothing works. i can upload images normally from another computer.</p>
+<p><img src="C:/Users/ruoha/OneDrive/Desktop/GIF%202021-10-7%209-47-26.gif" alt=""></p>
+<h1 id="解决">解决</h1>
+<p>I&rsquo;ve figured out what was going on and everything is fine now. It&rsquo;s because my internet is provided by my university and some sites were blocked, including s3.us-west-2.amazonaws.com, where the notion file seems to be? So I couldn&rsquo;t upload the images properly before. I emailed my university to ask them to allow access to this website and now there is no more problem.</p>
+<h1 id="笔记">笔记</h1>
+<p>我在网页版notion单机右键，点开<code>检查</code>-&gt;<code>控制台</code>发现上传图片时会出现一条报错：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">PUT https://s3.us-west-2.amazonaws.com/secure.notion-static.com/cb0135dd-a4aa-412f-8bfb-95341dc45776/彼岸桌面_美丽阿尔卑斯山自然风景_20210925.jpg?Content-Type=image%2Fjpeg&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211007%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20211007T145835Z&amp;X-Amz-Expires=86400&amp;X-Amz-Signature=7c233f65375828de5027cfc5a0c3ceae5947a792baace50b028442c47c3a4011&amp;X-Amz-SignedHeaders=host net::ERR_FAILED
+</code></pre></td></tr></table>
+</div>
+</div><p>我复制了网址发现被学校禁了，于是发邮件给学校解决。</p>
+
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/bug/">bug</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/2021-10-02-graphviz/">
+            <span class="next-text nav-default">用DiagrammR包的Graphviz和Mermaid语法画图</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Hammerfly</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
