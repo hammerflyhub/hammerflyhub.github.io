@@ -29,7 +29,6 @@ csl: apa.csl
 link-citations: yes
 ---
 
-
 ```{r, setup, include=FALSE}
 knitr::opts_chunk$set(tidy=TRUE, tidy.opts=list(width.cutoff=70),echo=F,message=F,warning = F)
 options(width = 70)
@@ -113,7 +112,7 @@ Der Risikobereich wird nach der Indikator-Kriging-Methode berechnet. Das gleiche
 
 Um die Veränderungen im Niederschlagsregime in Europa in den letzten Jahrzehnten zu ermitteln，wurden die absolute und relative Veränderung der mittleren Jahrensniederschaläge zwischen den beiden Perioden 1962 bis 1970 und 2010 bis 2018 für die einzelnen Klimastationen berechnet und kartografisch dargestellt. Im Norden Europas nahmen die Niederschläge zu, vor allem in mehreren Klimastationen im Nordwesten, wo die Niederschläge um mehr als 300 mm zunahmen und die relative Niederschlag 10% überstieg (Abbildung \@ref(fig:points)). Während im Süden Europas die Niederschläge abnahmen, und zwar in mehr als 10 Klimastationen um mehr als 100 mm. Der größte Rückgang der relativen Veränderung fand in einer der südwestlichen Klimastationen statt, mit einem Rückgang von mehr als 20%. Insgesamt haben die Niederschläge in Europa zwischen 1962 und 2018 im Norden zu- und im Süden abgenommen.
 
-```{r points,fig.show="hold",out.width="50%",fig.cap="Absolute (a) und relative (b) Veränderung der mittleren Jahresniederschläge an europäischen Klimastationen zwischen den beiden Perioden 1962 bis 1970 und 2010 bis 2018."}
+```{r points,fig.show="hold",out.width="50%",fig.cap="Absolute (a) und relative (b) Veraenderung der mittleren Jahresniederschlaege an europaeischen Klimastationen zwischen den beiden Perioden 1962 bis 1970 und 2010 bis 2018."}
 tm_shape(kw.sp.dat)+tm_symbols(size=0.4,col="DeltaN",midpoint = NA,legend.hist=T)+tm_layout(legend.outside=T,legend.hist.width=1)+
   tm_credits("(a)",1.5, position=c("left", "top"))
 tm_shape(kw.sp.dat)+tm_symbols(size=0.4,col="deltaN",midpoint = NA,legend.hist=T)+tm_layout(legend.outside=T,legend.hist.width=1)+
@@ -124,7 +123,7 @@ tm_shape(kw.sp.dat)+tm_symbols(size=0.4,col="deltaN",midpoint = NA,legend.hist=T
 
 Um den Zusammenhang zwischen Niederschlagsveränderungen in den letzten Jahrzehnten und Biom in Europa zu verdeutlichen, wurde die Veränderung des durchschnittlichen Jahresniederschlags mit Hilfe von Balkendiagrammen und Karten für jedes Biom dargestellt. Das Gebiet mit der höchsten Niederschlagszunahme liegt in der Tundra in Nordeuropa, mit mehr als 100 mm und einer durchschnittlichen Zunahme der Niederschläge um mehr als 10 % (Abbildung \@ref(fig:biomrain)). Die Wälder Mitteleuropas weisen ebenfalls eine Zunahme von 0-50 mm auf, wobei die relative Zunahme weniger als 10 % beträgt. Im Gegensatz dazu verzeichneten Mediterranean Forests, Woodlands & Scrub und Temperate Grasslands, Savannas & Shrublands im Süden einen Rückgang der Niederschläge. Das Temperate Grasslands, Savannas & Shrublands verzeichnete einen Rückgang der Niederschläge um 3 %, während die mediterranen Wälder einen Rückgang von über 20 mm verzeichneten, was einem relativen Rückgang von über 5 % entspricht.
 
-```{r biomrain,fig.show="hold",out.width="50%",fig.cap="Absolute (a,b) und relative (c,d) Veränderung der mittleren Jahresniederschläge für die europäischen Biomen zwischen den beiden Perioden 1962 und 1970 und 2010 bis 2018."}
+```{r biomrain,fig.show="hold",out.width="50%",fig.cap="Absolute (a,b) und relative (c,d) Veraenderung der mittleren Jahresniederschlaege für die europaeischen Biomen zwischen den beiden Perioden 1962 und 1970 und 2010 bis 2018."}
 def.par = par()
 par(mar=c(5,13,4,2))
 barplot(europa$MDeltaN,xlab=expression(paste(Delta,"N [mm]")),
@@ -173,7 +172,7 @@ Um das Variogramm-Modell auszuwählen, das am besten zum Variogramm-Schätzer be
 
 Die relativen Veränderungen des Niederschlags über ganz Europa (Schätzer und Fehler) wurden mit Hilfe der Kriging-Methode interpoliert. In Übereinstimmung mit den Originaldaten nimmt der Niederschlag im Norden tendenziell zu und im Süden ab (Abbildung \@ref(fig:universal)). Der Vorhersagekarte zufolge sind die größten Zuwächse vor allem in den Ländern Lettland, Estland und Litauen an der Ostküste der Ostsee zu verzeichnen, mit einem Anstieg von etwa 20 %. Der stärkste Niederschlagsrückgang ist in Spanien im Süden zu verzeichnen, mit einer Abnahme von etwa 25 %. Deutschland in Mitteleuropa und die Nordwestküste des Schwarzen Meeres um Moldawien und die Ukraine sind ebenfalls Gebiete, in denen die Niederschläge stärker zurückgegangen sind, nämlich um etwa 10 %. Die Fehler in den Daten sind insgesamt sehr gering (unter 0,0016) und sind vor allem an den Rändern der Karte größer.
 
-```{r universal,fig.show="hold",out.width="50%",fig.cap="Schätzer (a) und Fehler (b) der Interpolation von europäischen relativen Niederschlagsveränderungen mit Hilfe von Kriging und dem Gaußschen Variogramm-Modell"}
+```{r universal,fig.show="hold",out.width="50%",fig.cap="Schaetzer (a) und Fehler (b) der Interpolation von europaeischen relativen Niederschlagsveraenderungen mit Hilfe von Kriging und dem Gaußschen Variogramm-Modell"}
 spplot(kr.Regen, zcol="var1.pred",  
        col.regions = get_brewer_pal("RdYlGn",n=16,plot=F), contour=T,main="(a)")
 spplot(kr.Regen, zcol="var1.var",      
@@ -183,7 +182,7 @@ spplot(kr.Regen, zcol="var1.var",
 
 Um zu erfahren, welche Regionen von der Veränderung der Niederschlagsregime besonders betroffen sind, wurden die Regionen, die das "Risiko" einer relativen Zu- bzw. Abnahme der Jahresniederschläge um \>= 5 % dargestellt. Die verschiedenen Variogramm-Modelle werden ebenfalls verglichen und sphärisch ist das beste Modell sowohl für Variogramm mit einer Niederschlagszunahme von mehr als 5% als auch für Variogramm mit einer Abnahme von mehr als 5%. Die Risikogebiete mit erhöhten Niederschlägen konzentrieren sich hauptsächlich auf Nordeuropa, vor allem auf Skandinavien im Norden, die baltischen Staaten und Westrussland, die Insel Irland, die Insel Großbritannien und den Südwesten des Schwarzen Meeres sowie auf die Ausläufer der Südostseite der Alpen (Abbildung \@ref(fig:indikator)). Das Risiko geringerer Niederschläge konzentriert sich auf den südlichen Teil der Iberischen Halbinsel, wo Spanien liegt, auf die Pyrenäen und das Aquitanische Becken im Norden, auf die italienische Halbinsel, auf Deutschland und auf das Tiefland am nordwestlichen Schwarzen Meer. Der Fehler bei der Zu- und Abnahme des Jahresniederschlags liegt im Wesentlichen unter 0,05.
 
-```{r indikator,fig.show="hold",out.width="50%",fig.cap="Interpolation Europäische Risikogebiete für Niederschlagszunahmen und -abnahmen von mehr als 5% mit Hilfe von Kriging und Sphärischen Viriogramm-Modellen. a: Schätzer für Niederschlagszunahmen von mehr als 5%. b: Fehler für Niederschlagszunahmen von mehr als 5%. c: Schätzer für Niederschlagsabnahmen von mehr als 5%. d: Fehler für Niederschlagsabnahmen von mehr als 5%."}
+```{r indikator,fig.show="hold",out.width="50%",fig.cap="Interpolation Europaeische Risikogebiete für Niederschlagszunahmen und -abnahmen von mehr als 5% mit Hilfe von Kriging und Sphaerischen Viriogramm-Modellen. a: Schaetzer für Niederschlagszunahmen von mehr als 5%. b: Fehler für Niederschlagszunahmen von mehr als 5%. c: Schaetzer für Niederschlagsabnahmen von mehr als 5%. d: Fehler für Niederschlagsabnahmen von mehr als 5%."}
 spplot(kr.005, zcol="var1.pred",  main="(a)",col.regions = get_brewer_pal("YlOrRd",n=16,plot=F),
        contour=T,par.settings=list(panel.background=list(col="lightblue"))) 
 
