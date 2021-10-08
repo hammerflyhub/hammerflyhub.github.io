@@ -1,0 +1,523 @@
+---
+title: Klimawandel in Europa
+author: ''
+date: '2021-10-08'
+slug: []
+categories: []
+tags:
+  - 生态学
+lastmod: '2021-10-08T17:30:55+02:00'
+keywords: []
+description: ''
+comment: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+bibliography: references.bib
+csl: apa.csl
+link-citations: yes
+---
+
+
+```{r, setup, include=FALSE}
+knitr::opts_chunk$set(tidy=TRUE, tidy.opts=list(width.cutoff=70),echo=F,message=F,warning = F)
+options(width = 70)
+```
+
+# Einleitung
+
+<!-- 最近几十年的观测显示,气候在变化。气候变暖，出现酸雨，臭氧层被破坏。这导致冰川消融，极端气候频发，粮食减产，海平面上升和物种灭绝。气候变化对陆地和海洋生态系统和健康都有负面影响。降雨量作为气候的重要要素同样也发生了改变。在1901年至2003年极端强降水增加（ipcc p28), 而欧洲的北欧多雨而地中海少雨。 -->
+
+Die Beobachtungen der letzten Jahrzehnte haben gezeigt, dass sich das Klima verändert. Globale Erwärmung, saurer Regen und das Ozonloch sind unsere größten Umweltbedrohungen. Dies hat zum Abschmelzen der Gletscher, zu häufigen Extremwetterereignissen, zum Rückgang der Nahrungsmittelproduktion, zum Anstieg des Meeresspiegels und zum Aussterben von Arten geführt. Der Klimawandel hat negative Auswirkungen auf terrestrische und marine Ökosysteme und die Gesundheit. Die Niederschläge, ein wichtiges Element des Klimas, haben sich ebenfalls verändert. Zwischen 1901 und 2003 kam es zu einer Zunahme der extremen Niederschläge, während es in Europa in Nordeuropa mehr und im Mittelmeerraum weniger regnete [@climate2008].
+
+<!-- 降雨量的变化可能与多种因素有关。降雨很大程度上取决于温度和天气条件。在干旱的地区，高温会使地表变干加速而使气温升高，而湿润地区高温会加速水的蒸发从而增加降雨。同时，厄尔尼诺和大西洋涛动也会影响降雨的强度和分布，使一些地区更干旱而另一些地区更湿润。大西洋涛动的NAO Index表示Differenz der Druckabweichung an der Station in Ponta Delgaza und Stykkisholmur. 当其为正时北欧的降水量会增加，而地中海沿岸降水量减少。当其为负时北欧的降水量减少，地中海区域降水量增加。 -->
+
+Veränderung in der Niederschlagsmenge können von verschiedenen Faktoren abhängen. Die Niederschlagsmenge hängt in hohem Maße von der Temperatur und den Wetterbedingungen ab. In trockenen Gebieten können hohe Temperaturen den Boden schneller austrocknen und die Temperaturen erhöhen, während hohe Temperaturen in feuchten Gebieten die Niederschläge erhöhen können, indem sie die Wasserverdunstung beschleunigen. Gleichzeitig können El Niño und die Nordatlantische Oszillation (NAO) auch die Intensität und Verteilung der Niederschläge beeinflussen und einige Gebiete trockener und andere feuchter machen [@climate2008]. Der NAO-Index für die NAO gibt die Differenz der Druckabweichung an der Station in Ponta Delgada und Stykkishólmur an. Wenn er positiv ist, nehmen die Niederschläge in Nordeuropa zu und an der Mittelmeerküste ab. Wenn er negativ ist, nehmen die Niederschläge in Nordeuropa ab und die Niederschläge im Mittelmeerraum zu [@dahlman2009].
+
+<!-- die Veränderung im Niederschlagsregime in Europa in den letzten Jahrzehnten 可能与Biome相关。所以欧洲的每个Biome的平均Veränderung im Niederschlagsregime zwischen den beiden Perioden 1962 bis 1970 und 2010 bis 2018 被计算，整个欧洲的降雨量改变图被interpoliert，降雨量增加或者减少超过5%的风险区域被确定。 -->
+
+Die Veränderung des Niederschlagsregimes in Europa in den letzten Jahrzehnten könnte mit Biomen zusammenhängen. So wurde die durchschnittliche Veränderung im Niederschlagsregime für jedes Biome in Europa zwischen den beiden Perioden: 1962 bis 1970 und 2010 bis 2018 berechnet und die Veränderung der Niederschläge in ganz Europa interpoliert. Die Risikobereiche, in denen der Niederschlag um mehr als 5 % zu- oder abnimmt, wurden ermittelt.
+
+# Daten und Methoden
+
+## Daten
+
+<!-- 练习中使用的数据集 KlimaStatEuropa_Niedersschlaege 包含了两个Perioden: 1962 bis 1970 和 2010 bis 2018 的平均年降雨量（mm, Mittelwert, Standardabweichung）并附带经度和纬度坐标，坐标系是WSG 84。1962年到1970年欧洲各Klimastationen的平均年降雨量在145mm到2590mm不等。而2010年到2018年其平均年降水量分布在132到2792之间。其空间上的分布见图xxx. -->
+
+Im Zuge dieser Übung wurden Software r (Version 4.0.5) und R-Pakete gstat_2.0-7, rgdal_1.5-23, dplyr_1.0.6, tmap_3.3-2, raster_3.4-10, und sp_1.4-5 verwendet (Siehe [Anhang](#anhang) für den vollständigen Code).Der in der Übung verwendete Datensatz `KlimaStatEuropa_Niedersschlaege` enthält die durchschnittliche jährliche Niederschlagsmenge (mm, Mittelwert, Standardabweichung) für zwei Zeiträume: 1962 bis 1970 und 2010 bis 2018 mit den Koordinaten der Längen- und Breitengrade im WSG 84. Die durchschnittliche jährliche Niederschlagsmenge in den europäischen Klimastationen von 1962 bis 1970 schwankt zwischen 145 mm und 2590 mm. Im Gegensatz dazu lag die durchschnittliche jährliche Niederschlagsverteilung von 2010 bis 2018 zwischen 132 mm und 2792 mm. Ihre räumliche Verteilung ist in Abbildung \@ref(fig:data)dargestellt.
+
+<!-- 使用的地类Biome_Europa Shape-file 包含了欧洲的地类数据，欧洲的Biomen被分为9类。主要有最北部的斯堪的纳维亚山为Tundra,北欧的Taiga/Forests，中欧大片的Temperate Broadleaf & Mixed Forests，南部地中海沿岸的Mediterranean Forests，Woodlands & Scrub, 东部黑海低地的Temperate Grassland, Savannas & Shrublands，以及阿尔卑斯山，Carpathian Mountains以及苏格兰高地的Temperate Conifer Forests. -->
+
+Die `Biome_Europa` Shape-Datei enthält Daten über die Biome Europas, die in neun Kategorien unterteilt sind. Die Hauptkategorien sind Tundra für die nördlichsten skandinavischen Gebirge, Taiga/Forests für Nordeuropa, Temperate Broadleaf & Mixed Forests in Mitteleuropa, Mediterranean Forests, Woodlands & Scrub für die südliche Mittelmeerküste, Temperate Grassland, Savannas & Shrublands für das Schwarzmeertiefland und Temperate Conifer Forests in den Alpen, den Karpaten und den schottischen Highlands.
+
+```{r data, fig.cap="In der Übung verwendete Daten: Verteilung der Biome und Klimastationen in Europa. Die weißen Punkte sind die Standorte der Klimastationen."}
+load("europe_rain.RData")
+library(sp)
+library(tmap)
+library(rgdal)
+library(gstat)
+library(raster)
+library(tmaptools)
+tmap_options(bg.color = "lightblue")
+tm_shape(europa)+
+  tm_polygons("Biom_Name")+
+  tm_shape(kw.sp.dat)+
+  tm_symbols(size=0.1,col="white")+
+  tm_layout(legend.outside=T,legend.outside.size = 0.54)
+```
+
+## Niederschlagsveränderungen für Biomen
+
+<!-- 用两个Perioden的年降水量之差算出各个Klimastationen的降水量改变量，并除以Perioden 1(1962年到1970年)的降水量可以得到降水量的相对改变量。 -->
+
+Die Differenz des Jahresniederschlags zwischen den beiden Perioden wurde zur Berechnung der Niederschlagsänderung für jede Klimastation verwendet. Die absolute Veränderung wird durch die Niederschlagsmenge von Periode 1 (1962 bis 1970) geteilt, um die relative Veränderung der Niederschlagsmenge zu erhalten.
+
+```{=tex}
+\begin{equation} 
+  \Delta Mh_N=Mh_{N_{2010/2018}}-Mh_{N_{1962/1970}}
+  (\#eq:DeltaMhN)
+\end{equation}
+```
+```{=tex}
+\begin{equation} 
+  \delta Mh_N=\frac{\Delta Mh_N}{Mh_{N_{1962/1970}}}
+  (\#eq:deltaMhN)
+\end{equation}
+```
+<!-- 把数据集 KlimaStatEuropa_NiedersschlaegeErgebnisse 转换为sp-Objekt后在r中使用命令sp包中的aggregate计算出了欧洲的每个Biome的平均Veränderung im Niederschlagsregime。 -->
+
+Nach der Konvertierung des Datensatzes `KlimaStatEuropa_NiedersschlaegeErgebnisse` in `sp-Objekt` wurde die durchschnittliche Veränderung im Niederschlagsregime für jedes Biome in Europa in r mit dem Befehl `aggregate` im `sp-Paket` berechnet.
+
+## Interpolation mit Hilfe von Kriging
+
+<!-- Interpolation使用的是Kriging法。Kriging法借助一个半变异函数可以预测不具有数据的地区的数值。 -->
+
+Bei der Interpolation wird die Kriging-Methode angewandt, bei der die Werte von Gebieten, für die keine Daten vorliegen, mit Hilfe eines Variogramm-Modells vorhergesagt werden. Das Variogramm-Modell beschreibt den Zusammenhang zwischen dem Abstand eines Punktpaares und seiner Varianz der Differenz. Ein lineares Trendmodell wird unter Verwendung des Längen- und Breitengrades der Klimastationen als unabhängige Variablen erstellt, um trendbereinigte Daten zu erhalten. Und dann mit Hilfe einer Variogramm-Analyse wurden die Daten untersucht. Die mittleren Variogrammwerte wurden mit der Funktion `variogram` in Package `gstat` berechnet und mit vier Modellen: lineares Modell, sphärisches Modell, exponentielles Modell und Gauß Modell angepasst. Die vier Modelle wurden verglichen und das Modell mit dem geringsten Fehler wurde als endgültiges Variogramm-Modell für Kriging verwendet.
+
+Der Risikobereich wird nach der Indikator-Kriging-Methode berechnet. Das gleiche Trendmodell wie beim letzten Abschnitt wurde genommen, um den Bereichen zu berechnen, bei denen die relative Zu- bzw. Abnahme der Jahresniederschlag größer oder gleich 5% ist. Variogramm-Schätzer wurde auch von den linearen, sphärischen, exponentiellen und Gauß'schen Modelle angepasst. Das beste Modell wurde für Kriging übriggelassen.
+
+# Ergebnisse
+
+<!-- Um die Veränderungen im Niederschlagsregime in Europa in den letzten Jahrzehnten zu ermitteln, wurden die absolute und relative Veränderung der mittleren Jahrensniederschaläge zwischen den beiden Perioden 1962 bis 1970 und 2010 bis 2018 für die einzelnen Klimastationen berechnet und kartografisch dargestellt. 在欧洲北部降雨量增加，尤其在西北部的几个Klimastationen降雨量增加超过300mm。而欧洲南部降雨量减少，超过10个Klimastationen都减少超过100mm.北部多个Klimastationen的relative Veränderung增长超过10%，而relative Veränderung减少最多的地方在西南部的一个Klimastation，超过了20%。总体来说，欧洲的降雨量在1962到2018年之间北部增加，南部减少。 -->
+
+Um die Veränderungen im Niederschlagsregime in Europa in den letzten Jahrzehnten zu ermitteln，wurden die absolute und relative Veränderung der mittleren Jahrensniederschaläge zwischen den beiden Perioden 1962 bis 1970 und 2010 bis 2018 für die einzelnen Klimastationen berechnet und kartografisch dargestellt. Im Norden Europas nahmen die Niederschläge zu, vor allem in mehreren Klimastationen im Nordwesten, wo die Niederschläge um mehr als 300 mm zunahmen und die relative Niederschlag 10% überstieg (Abbildung \@ref(fig:points)). Während im Süden Europas die Niederschläge abnahmen, und zwar in mehr als 10 Klimastationen um mehr als 100 mm. Der größte Rückgang der relativen Veränderung fand in einer der südwestlichen Klimastationen statt, mit einem Rückgang von mehr als 20%. Insgesamt haben die Niederschläge in Europa zwischen 1962 und 2018 im Norden zu- und im Süden abgenommen.
+
+```{r points,fig.show="hold",out.width="50%",fig.cap="Absolute (a) und relative (b) Veränderung der mittleren Jahresniederschläge an europäischen Klimastationen zwischen den beiden Perioden 1962 bis 1970 und 2010 bis 2018."}
+tm_shape(kw.sp.dat)+tm_symbols(size=0.4,col="DeltaN",midpoint = NA,legend.hist=T)+tm_layout(legend.outside=T,legend.hist.width=1)+
+  tm_credits("(a)",1.5, position=c("left", "top"))
+tm_shape(kw.sp.dat)+tm_symbols(size=0.4,col="deltaN",midpoint = NA,legend.hist=T)+tm_layout(legend.outside=T,legend.hist.width=1)+
+  tm_credits("(b)",1.5, position=c("left", "top"))
+```
+
+<!-- 为了弄清欧洲 in den letzten Jahrzehnten 降水量变化和Biom的关系，各地类的年平均降水量的改变量wurden mit Hilfe von Balkendiagrammen und Karten dargestellt. 降水量增加最多的区域在北部的Tundra（什么Tundra?），超过100mm，平均降水量增加了10%以上。欧洲中部的森林（具体描述地区）也有0-50mm的增加，相对增长量在10%以下。而南部的Mediterranean Forests, Woodlands & Scrub und Grassland的降水量减少。Grassland的降雨量减少了3%，而最南部地中海沿岸的Mediterranean Forests减少了超过20mm, 相对降水量减少5%以上。 -->
+
+Um den Zusammenhang zwischen Niederschlagsveränderungen in den letzten Jahrzehnten und Biom in Europa zu verdeutlichen, wurde die Veränderung des durchschnittlichen Jahresniederschlags mit Hilfe von Balkendiagrammen und Karten für jedes Biom dargestellt. Das Gebiet mit der höchsten Niederschlagszunahme liegt in der Tundra in Nordeuropa, mit mehr als 100 mm und einer durchschnittlichen Zunahme der Niederschläge um mehr als 10 % (Abbildung \@ref(fig:biomrain)). Die Wälder Mitteleuropas weisen ebenfalls eine Zunahme von 0-50 mm auf, wobei die relative Zunahme weniger als 10 % beträgt. Im Gegensatz dazu verzeichneten Mediterranean Forests, Woodlands & Scrub und Temperate Grasslands, Savannas & Shrublands im Süden einen Rückgang der Niederschläge. Das Temperate Grasslands, Savannas & Shrublands verzeichnete einen Rückgang der Niederschläge um 3 %, während die mediterranen Wälder einen Rückgang von über 20 mm verzeichneten, was einem relativen Rückgang von über 5 % entspricht.
+
+```{r biomrain,fig.show="hold",out.width="50%",fig.cap="Absolute (a,b) und relative (c,d) Veränderung der mittleren Jahresniederschläge für die europäischen Biomen zwischen den beiden Perioden 1962 und 1970 und 2010 bis 2018."}
+def.par = par()
+par(mar=c(5,13,4,2))
+barplot(europa$MDeltaN,xlab=expression(paste(Delta,"N [mm]")),
+        horiz=T,names.arg=europa$Biom_Name,col=colorD,las=1,cex.names = 0.6,cex.axis=0.9)
+mtext('(a)', line=-2, at=-100,cex=1.5)
+par(def.par)
+
+tm_shape(europa)+tm_polygons("MDeltaN",midpoint=NA)+
+  tm_text("id",col="black")+
+  tm_add_legend("text",labels=europa$Biom_Name,text=europa$id,size=3)+
+  tm_layout(legend.outside = T,legend.outside.size=0.54)+
+  tm_credits("(b)",1.5, position=c("left", "top"))
+
+par(mar=c(5,13,4,2))
+barplot(europa$MdeltaN,xlab=expression(paste(delta,"N")),
+        horiz=T,names.arg=europa$Biom_Name,col=colord,las=1,cex.names = 0.6,cex.axis=0.9)
+mtext('(c)', line=-2, at=-0.13,cex=1.5)
+par(def.par)
+
+tm_shape(europa)+tm_polygons("MdeltaN",midpoint=NA)+
+        tm_text("id",col="black")+
+        tm_add_legend("text",labels=europa$Biom_Name,text=europa$id,size=3)+
+        tm_layout(legend.outside = T,legend.outside.size=0.54)+
+  tm_credits("(d)",1.5, position=c("left", "top"))
+```
+
+<!-- 为了建立Variogramm Modelle,确定降水量的变化与Klimastationen的距离的关系，以x, y als unabhängigen Variablen建立了线性模型并简化，去除相关性不显著的因变量，预测降水量的相对变化与坐标的关系，得出 -->
+
+Zur Erstellung des Variogramm-Modells, und den Zusammenhang zwischen der Veränderung des Niederschlags und der Entfernung von Klimastationen bestimmt, wurde ein lineares Modell mit `lon`, `lat` als unabhängigen Variablen aufgestellt und vereinfacht, indem die unabhängige Variable mit unbedeutender Korrelation entfernt. Die relative Veränderung des Niederschlags in Abhängigkeit von den Koordinaten vorhergesagt wurde. Die sich daraus ergebende Gleichung lautet:
+
+```{=tex}
+\begin{equation}
+\delta Mh_N=\beta_0+\beta_1 x+\beta_2 xy+\beta_3 x^3+\beta_4 x^2y
+(\#eq:linear)
+\end{equation}
+```
+<!-- 其中deltaN为降水量的相对变化，lat为地理坐标的纬度，lon为地理坐标的经度。 -->
+
+wobei `deltaN` die relative Änderung des Niederschlags, `x` die Länge der geografischen Koordinaten und `y` die Breite der geografischen Koordinaten ist.
+
+<!-- 为了在Interpolation时选择最符合原始数据的VariogrammModelle，linear, sphärisch, exponential和gauß模型wurden 用图像dargestellt und 它们的误差大小被对比(图)。Gauß 模型是Fehler最小的模型，被用于Kriging. 模型的Nugget为6*10^-5,Sill为0.003，Range为536。 -->
+
+Um das Variogramm-Modell auszuwählen, das am besten zum Variogramm-Schätzer bei der Interpolation passen, wurden die Fehler der linearen, sphärischen, exponentiellen und Gauß'schen Modelle verglichen. Das Gauß-Modell ist das Modell mit dem kleinsten Fehler und wurde für Kriging verwendet. Das Modell hat ein Nugget von $6\cdot10^{-5}$, einen Sill von 0,003 und einen Practical range von 536.
+
+<!-- 借助Kriging法降水量的相对变化在整个欧洲的情况(预测值和误差)被Interpoliert.与原始数据相符合，降水量呈现北边增加南边减少的趋势。按照预测地图，增加最多的区域主要是在波罗的海东岸的Latvia,Estonia和lithuania等国家，大约增加20%。而降水量减少最严重的区域在南边的西班牙，大约减少了25%。同时，中欧的德国，以及黑海西北岸的Moldawien和Ukraine附近也是降水量减少比较严重的区域，降低了约10%。数据的误差整体非常小，在0.0016以下，且主要在地图边缘较大。 -->
+
+Die relativen Veränderungen des Niederschlags über ganz Europa (Schätzer und Fehler) wurden mit Hilfe der Kriging-Methode interpoliert. In Übereinstimmung mit den Originaldaten nimmt der Niederschlag im Norden tendenziell zu und im Süden ab (Abbildung \@ref(fig:universal)). Der Vorhersagekarte zufolge sind die größten Zuwächse vor allem in den Ländern Lettland, Estland und Litauen an der Ostküste der Ostsee zu verzeichnen, mit einem Anstieg von etwa 20 %. Der stärkste Niederschlagsrückgang ist in Spanien im Süden zu verzeichnen, mit einer Abnahme von etwa 25 %. Deutschland in Mitteleuropa und die Nordwestküste des Schwarzen Meeres um Moldawien und die Ukraine sind ebenfalls Gebiete, in denen die Niederschläge stärker zurückgegangen sind, nämlich um etwa 10 %. Die Fehler in den Daten sind insgesamt sehr gering (unter 0,0016) und sind vor allem an den Rändern der Karte größer.
+
+```{r universal,fig.show="hold",out.width="50%",fig.cap="Schätzer (a) und Fehler (b) der Interpolation von europäischen relativen Niederschlagsveränderungen mit Hilfe von Kriging und dem Gaußschen Variogramm-Modell"}
+spplot(kr.Regen, zcol="var1.pred",  
+       col.regions = get_brewer_pal("RdYlGn",n=16,plot=F), contour=T,main="(a)")
+spplot(kr.Regen, zcol="var1.var",      
+       col.regions = rev(hcl.colors(100, palette = "reds")),
+       main = "(b)")
+```
+
+Um zu erfahren, welche Regionen von der Veränderung der Niederschlagsregime besonders betroffen sind, wurden die Regionen, die das "Risiko" einer relativen Zu- bzw. Abnahme der Jahresniederschläge um \>= 5 % dargestellt. Die verschiedenen Variogramm-Modelle werden ebenfalls verglichen und sphärisch ist das beste Modell sowohl für Variogramm mit einer Niederschlagszunahme von mehr als 5% als auch für Variogramm mit einer Abnahme von mehr als 5%. Die Risikogebiete mit erhöhten Niederschlägen konzentrieren sich hauptsächlich auf Nordeuropa, vor allem auf Skandinavien im Norden, die baltischen Staaten und Westrussland, die Insel Irland, die Insel Großbritannien und den Südwesten des Schwarzen Meeres sowie auf die Ausläufer der Südostseite der Alpen (Abbildung \@ref(fig:indikator)). Das Risiko geringerer Niederschläge konzentriert sich auf den südlichen Teil der Iberischen Halbinsel, wo Spanien liegt, auf die Pyrenäen und das Aquitanische Becken im Norden, auf die italienische Halbinsel, auf Deutschland und auf das Tiefland am nordwestlichen Schwarzen Meer. Der Fehler bei der Zu- und Abnahme des Jahresniederschlags liegt im Wesentlichen unter 0,05.
+
+```{r indikator,fig.show="hold",out.width="50%",fig.cap="Interpolation Europäische Risikogebiete für Niederschlagszunahmen und -abnahmen von mehr als 5% mit Hilfe von Kriging und Sphärischen Viriogramm-Modellen. a: Schätzer für Niederschlagszunahmen von mehr als 5%. b: Fehler für Niederschlagszunahmen von mehr als 5%. c: Schätzer für Niederschlagsabnahmen von mehr als 5%. d: Fehler für Niederschlagsabnahmen von mehr als 5%."}
+spplot(kr.005, zcol="var1.pred",  main="(a)",col.regions = get_brewer_pal("YlOrRd",n=16,plot=F),
+       contour=T,par.settings=list(panel.background=list(col="lightblue"))) 
+
+spplot(kr.005, zcol="var1.var",main="(b)",
+       col.regions = rev(heat.colors(100)),
+       par.settings=list(panel.background=list(col="lightblue")))
+
+spplot(kr.ab005, zcol="var1.pred",  main="(c)", col.regions = get_brewer_pal("YlOrRd",n=16,plot=F),
+       contour=T,par.settings=list(panel.background=list(col="lightblue"))) 
+
+spplot(kr.ab005, zcol="var1.var", main="(d)",
+       col.regions = rev(heat.colors(100)), par.settings=list(panel.background=list(col="lightblue")))
+```
+
+# Diskussion
+
+Die Niederschläge insgesamt nehmen im Norden zu und im Süden ab. Dies ist wahrscheinlich hauptsächlich auf die Auswirkungen der globalen Erwärmung zurückzuführen. Die Temperatur in Norwegen stieg zwischen 1900 und 2008 um 0,9 °C [@climate]. Die steigende Temperatur und das reichliche Wasserangebot des nahen Atlantiks führten zu einer raschen Verdunstung des Wassers und in der Folge zu einer Zunahme der Niederschläge. Die außergewöhnlich trockene Mittelmeerregion hingegen könnte mit der verstärkten Antizyklonen Zirkulation und der Nordverschiebung der atlantischen Sturmbahn zusammenhängen [@giorgi2008]. Darüber hinaus ein positiver NAO-Index kann auch dazu führen, dass in Nordeuropa mehr und im Mittelmeerraum weniger Niederschlag fällt [@climate2008]. Gleichzeitig entspricht die Variation der Niederschlagsmenge eindeutig der Verteilung von Biomen. Dies kann durch topografische Faktoren beeinflusst werden. Zum Beispiel blockiert die skandinavischen Berge im Norden einen Teil der feuchten atlantischen Luftströmungen, wodurch die Niederschläge in dieser Region stärker zunehmen als in den umliegenden Gebieten.
+
+Veränderungen bei den Niederschlägen können sich in mehrfacher Hinsicht negativ auswirken. Höhere Temperaturen und geringere durchschnittliche Niederschläge erhöhen die Wahrscheinlichkeit von Hitzewellen und Dürreperioden, die das Wachstum der Pflanzen beeinträchtigen können [@climate2008]. Die Mittelmeerregion, in der bereits im Sommer wenig Niederschlag fällt, ist hoch brandgefährdet. In Regionen mit erhöhtem Niederschlagsrisiko erhöhen extreme Regenfälle die Wahrscheinlichkeit von Überschwemmungen und können in Ländern wie Norwegen, die auf Wasserkraft angewiesen sind, schwere Schäden verursachen. Darüber hinaus können sich auch Veränderungen bei den Niederschlägen auf die Qualität und Quantität des Wassers in Europa auswirken [@climate2008]. Denn sowohl extreme Regenfälle als auch Dürreperioden können die Mikroorganismen im Wasser erhöhen, die wiederum Krankheiten verursachen können. Geringe Niederschläge im Mittelmeerraum könnte auch zum Verschwinden einiger kurzlebiger aquatischer Ökosysteme führen, während die biologische Vielfalt im Mittelmeerraum, einem sensiblen Gebiet für die biologische Vielfalt, ebenfalls stark beeinträchtigt werden könnte, wenn die Niederschläge weiter abnehmen [@newbold2020].
+
+Die Niederschlagsverhältnisse in Europa haben sich in den letzten Jahrzehnten erheblich verändert. Zwischen der Zeiträumen 1962-1970 und 2010 bis 2018 hat der Jahresniederschlag in Europa in der nördlichen Tundra um 20 % zugenommen und in den südlichen Mittelmeerwäldern um 25 % abgenommen. Dies kann durch Faktoren wie die globale Erwärmung und die Topografie beeinflusst werden, die zu Katastrophen wie Dürren und Überschwemmungen führen können, mit negativen Auswirkungen auf die Landwirtschaft, die Energieversorgung, die menschliche Gesundheit und die biologische Vielfalt. Initiativen zur Bekämpfung des Klimawandels sind unerlässlich.
+
+# Literatur {.unnumbered}
+
+::: {#refs}
+:::
+
+# Anhang {#anhang .unnumbered}
+
+```{r,echo=T,eval=FALSE}
+
+############################################################################
+############################################################################
+###                                                                      ###
+###              ABSCHLUSSPROJEKT: ANALYSE R UMLICHER DATEN              ###
+###                        KLIMAWANDEL IN EUROPA                         ###
+###                              RUOHAN LI                               ###
+###                              12.09.2021                              ###
+###                                                                      ###
+############################################################################
+############################################################################
+
+##///////////////////////////////////////////////////////////////
+##                          Aufgabe 1                          //
+##///////////////////////////////////////////////////////////////
+kw<-read.table("KlimaStatEuropa_Niedersschlaege.txt",header=TRUE)
+head(kw)
+kw$DeltaN <- kw$Prec_2010to18_mean - kw$Prec_1962to70_mean
+kw$deltaN <- kw$DeltaN/kw$Prec_1962to70_mean
+library(sp)
+kw.sp.dat <- SpatialPointsDataFrame(coords=kw[c("lon","lat")],data=kw,proj4string = CRS("+init=epsg:4326")) # WSG 84
+library(tmap)
+tmap_options(bg.color = "lightblue")
+tm_shape(kw.sp.dat)+tm_symbols(size=0.4,col="DeltaN",midpoint = NA,legend.hist=T)+tm_layout(legend.outside=T,legend.hist.width=1)
+tm_shape(kw.sp.dat)+tm_symbols(size=0.4,col="deltaN",midpoint = NA,legend.hist=T)+tm_layout(legend.outside=T,legend.hist.width=1)
+
+##///////////////////////////////////////////////////////////////
+##                          Aufgabe 2                          //
+##///////////////////////////////////////////////////////////////
+library(rgdal)
+europa <- readOGR(dsn="Biome_Europa", layer="Biomes_Europa")
+
+tm_shape(europa)+  # Verteilung der Biomen und Klimastationen
+  tm_polygons("Biom_Name")+
+  tm_shape(kw.sp.dat)+
+  tm_symbols(size=0.1,col="white")+
+  tm_layout(legend.outside=T,legend.outside.size = 0.54)
+
+MDeltaN <- aggregate(kw.sp.dat[,c("DeltaN")],europa,FUN=mean)
+europa@data$MDeltaN <- MDeltaN@data$DeltaN
+europa@data$id <- 1:9
+
+tm_shape(europa)+tm_polygons("MDeltaN",midpoint=NA)+  # Absolute Veränderung Karte
+  tm_text("id",col="black")+
+  tm_add_legend("text",labels=europa$Biom_Name,text=europa$id,size=3)+
+  tm_layout(legend.outside = T,legend.outside.size=0.54)
+
+MdeltaN <- aggregate(kw.sp.dat[,c("deltaN")],europa,FUN=mean)
+europa@data$MdeltaN <- MdeltaN@data$deltaN
+tm_shape(europa)+tm_polygons("MdeltaN",midpoint=NA)+  # relative Veränderung Karte
+        tm_text("id",col="black")+
+        tm_add_legend("text",labels=europa$Biom_Name,text=europa$id,size=3)+
+        tm_layout(legend.outside = T,legend.outside.size=0.54)
+
+# absolute Veränderung barplot
+def.par = par()
+par(mar=c(5,13,4,2))
+library("tmaptools")
+color<- ifelse(europa$MDeltaN>100,get_brewer_pal("RdYlGn",n=4,plot=F)[4],ifelse(europa$MDeltaN>50,get_brewer_pal("RdYlGn",n=4,plot=F)[3],ifelse(europa$MDeltaN>0,get_brewer_pal("RdYlGn",n=4,plot=F)[2],get_brewer_pal("RdYlGn",n=4,plot=F)[1])))
+
+barplot(europa$MDeltaN,xlab=expression(paste(Delta,"N [mm]")),  
+        horiz=T,names.arg=europa$Biom_Name,col=color,las=1,cex.names = 0.6,cex.axis=0.9)
+
+# relative Veränderung barplot
+color<-ifelse(europa$MdeltaN>0.1,get_brewer_pal("RdYlGn",n=5,plot=F)[5],ifelse(europa$MdeltaN>0.05,get_brewer_pal("RdYlGn",n=5,plot=F)[4],ifelse(europa$MdeltaN>0,get_brewer_pal("RdYlGn",n=5,plot=F)[3],ifelse(europa$MdeltaN>-0.05,get_brewer_pal("RdYlGn",n=5,plot=F)[2],get_brewer_pal("RdYlGn",n=5,plot=F)[1]))))
+
+barplot(europa$MdeltaN,xlab=expression(paste(delta,"N")),
+        horiz=T,names.arg=europa$Biom_Name,col=color,las=1,cex.names = 0.6,cex.axis=0.9)
+
+par(def.par)
+
+##///////////////////////////////////////////////////////////////
+##                          Aufgabe 3                          //
+##///////////////////////////////////////////////////////////////
+
+##---------------------------------------------------------------
+##  3.1 Trendmodell                                            --
+##---------------------------------------------------------------
+mod <- lm(deltaN ~  lat + lon + I(lat^2) + I(lon^2) + I(lat*lon) + 
+            I(lon^3) + I(lat^3) + I(lat^2*lon) + I(lat*lon^2),data=kw.sp.dat)
+trend.mod <- step(mod, k=4)  # k = 4 ~ Annahme eines Signifikanz-Niveaus von 0.05 *
+summary(trend.mod)
+## 
+## Call:
+## lm(formula = deltaN ~ lon + I(lat^2) + I(lat * lon) + I(lon^3) + 
+##     I(lat * lon^2), data = kw.sp.dat)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.128144 -0.034995  0.000958  0.031846  0.131952 
+## 
+## Coefficients:
+##                  Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)    -2.017e-01  1.063e-02 -18.964  < 2e-16 ***
+## lon             1.122e-02  1.352e-03   8.293 4.75e-16 ***
+## I(lat^2)        8.123e-05  4.545e-06  17.871  < 2e-16 ***
+## I(lat * lon)   -2.763e-04  3.566e-05  -7.747 2.89e-14 ***
+## I(lon^3)       -4.292e-06  7.853e-07  -5.465 6.19e-08 ***
+## I(lat * lon^2)  4.761e-06  8.050e-07   5.914 4.97e-09 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.04949 on 791 degrees of freedom
+## Multiple R-squared:  0.5111, Adjusted R-squared:  0.508 
+## F-statistic: 165.4 on 5 and 791 DF,  p-value: < 2.2e-16
+
+##----------------------------------------------------------------
+##  3.2 Variogramm-Analyse                                      --
+##----------------------------------------------------------------
+max.d <- max(spDists(kw.sp.dat,longlat=TRUE))
+library(gstat)
+v <- variogram(formula(trend.mod), kw.sp.dat, cutoff=1000)
+plot(v)
+vfit.lin <- fit.variogram(v, vgm(0.003,"Lin",550,0))  
+plot(v, model=vfit.lin)
+vfit.lin
+vfit.sph <- fit.variogram(v, vgm(0.005,"Sph",550,0))
+vfit.sph
+plot(v, model=vfit.sph)
+vfit.exp <- fit.variogram(v, vgm(0.003,"Exp",550/4,0))
+vfit.exp
+plot(v,model=vfit.exp)
+vfit.gau <- fit.variogram(v, vgm(0.003,"Gau",550/sqrt(3),0))
+vfit.gau
+plot(v,model=vfit.gau)
+
+plot(v$dist, v$gamma,
+     pch=19, cex=1.2, col="darkred",
+     cex.lab=1.2, cex.axis=1.2,
+     xlab="Distanz", ylab="Semivarianz")
+lines(variogramLine(vfit.lin, maxdist = 1000), col="orange", lwd=3)
+lines(variogramLine(vfit.sph, maxdist = 1000), col="deepskyblue", lwd=2)
+lines(variogramLine(vfit.exp, maxdist = 1000), col="green3", lty=2, lwd=2)
+lines(variogramLine(vfit.gau, maxdist = 1000), col="indianred", lty=4, lwd=2)
+
+legend("bottomright", legend=c("Linear","Sphärisch","Exponentiell","Gauss"),
+       lty=c(3,1,2,4), lwd=2,
+       col=c("orange","deepskyblue","green3","indianred"))
+
+# Parameter der Modelle
+Pars.VariogrammModelle <- data.frame( Modell=c("Linear","Sphärisch","Exponential","Gauss"),
+                                      Nugget=c(vfit.lin$psill[1], vfit.sph$psill[1], vfit.exp$psill[1],vfit.gau$psill[1]),
+                                      Sill=c(sum(vfit.lin$psill),sum(vfit.sph$psill),sum(vfit.exp$psill), sum(vfit.gau$psill)),
+                                      Practical_Range= c(vfit.lin$range[2], vfit.sph$range[2], 3*vfit.exp$range[2], sqrt(3)*vfit.gau$range[2]))      
+
+Pars.VariogrammModelle 
+##        Modell       Nugget        Sill Practical_Range
+## 1      Linear 0.000000e+00 0.002869976        555.5620
+## 2   Sphärisch 0.000000e+00 0.002978583        806.2835
+## 3 Exponential 0.000000e+00 0.004679675       2260.2030
+## 4       Gauss 5.909261e-05 0.002822126        536.4252
+attr(vfit.lin,"SSErr")  # 9.565483e-09
+attr(vfit.sph,"SSErr")  # 1.37018e-08
+attr(vfit.exp,"SSErr")  # 2.741517e-08
+attr(vfit.gau,"SSErr")  # 3.358725e-09, Modell mit dem geringesten Fehler!
+
+# bestes Modell, kleinster Fehler
+vfit <- vfit.gau
+
+##----------------------------------------------------------------
+##  3.3 Interpolation                                           --
+##----------------------------------------------------------------
+library(raster)
+coords <- extent(europa)
+gitter <- expand.grid(lon=seq(coords[1],coords[2], 0.1666667), lat=seq(coords[3], coords[4], 0.1666667)) 
+gridded(gitter) <- ~lon+lat
+proj4string(gitter) <- CRS("+init=epsg:4326")
+plot(gitter)
+points(kw.sp.dat, col="red",pch=19)
+
+# Universal Kriging Ertrag
+kr.Regen <- krige(formula(trend.mod),kw.sp.dat, gitter, vfit)
+kr.Regen <- kr.Regen[europa,]
+# Darstellung Schätzer und Fehlerkarte
+spplot(kr.Regen, zcol="var1.pred",  
+       col.regions = get_brewer_pal("RdYlGn",n=16,plot=F), contour=T)
+# Fehler
+spplot(kr.Regen, zcol="var1.var",      
+       col.regions = rev(hcl.colors(100, palette = "reds")))
+
+##///////////////////////////////////////////////////////////////
+##                          Aufgabe 4                          //
+##///////////////////////////////////////////////////////////////
+
+##---------------------------------------------------------------
+##  4.1 Variogramm-Analyse für Niederschlagszunahme >= 5%      --
+##---------------------------------------------------------------
+v005<-variogram(I(deltaN>=0.05)~lon + I(lat^2) + I(lat * lon) + I(lon^3) + 
+                  I(lat * lon^2),kw.sp.dat,cutoff=1000)
+plot(v005)
+v005fit.lin <- fit.variogram(v005, vgm(0.2,"Lin",550,0))  
+plot(v005, model=v005fit.lin)
+v005fit.lin
+v005fit.sph <- fit.variogram(v005, vgm(0.2,"Sph",550,0))
+v005fit.sph
+plot(v005, model=v005fit.sph)
+v005fit.exp <- fit.variogram(v005, vgm(0.2,"Exp",550/4,0))
+v005fit.exp
+plot(v005,model=v005fit.exp)
+v005fit.gau <- fit.variogram(v005, vgm(0.2,"Gau",550/sqrt(3),0))
+v005fit.gau
+plot(v005,model=v005fit.gau)
+
+plot(v005$dist, v005$gamma,
+     pch=19, cex=1.2, col="darkred",
+     cex.lab=1.2, cex.axis=1.2,
+     xlab="Distanz", ylab="Semivarianz")
+lines(variogramLine(v005fit.lin, maxdist = 1000), col="orange", lwd=3)
+lines(variogramLine(v005fit.sph, maxdist = 1000), col="deepskyblue", lwd=2)
+lines(variogramLine(v005fit.exp, maxdist = 1000), col="green3", lty=2, lwd=2)
+lines(variogramLine(v005fit.gau, maxdist = 1000), col="indianred", lty=4, lwd=2)
+legend("bottomright", legend=c("Linear","Sphärisch","Exponentiell","Gauss"),
+       lty=c(3,1,2,4), lwd=2,
+       col=c("orange","deepskyblue","green3","indianred"))
+
+# Parameter der Modelle
+Pars.VariogrammModelle <- data.frame( Modell=c("Linear","Sphärisch","Exponential","Gauss"),
+                                      Nugget=c(v005fit.lin$psill[1], v005fit.sph$psill[1], v005fit.exp$psill[1],v005fit.gau$psill[1]),
+                                      Sill=c(sum(v005fit.lin$psill),sum(v005fit.sph$psill),sum(v005fit.exp$psill), sum(v005fit.gau$psill)),
+                                      Practical_Range= c(v005fit.lin$range[2], v005fit.sph$range[2], 3*v005fit.exp$range[2], sqrt(3)*v005fit.gau$range[2]))      
+
+Pars.VariogrammModelle 
+##        Modell      Nugget      Sill Practical_Range
+## 1      Linear 0.009503418 0.1365362        417.9350
+## 2   Sphärisch 0.007344076 0.1384693        571.2088
+## 3 Exponential 0.001588780 0.1552483        895.0053
+## 4       Gauss 0.017409387 0.1337921        415.1046
+attr(v005fit.lin,"SSErr")  # 1.941087e-05 
+attr(v005fit.sph,"SSErr")  # 1.082632e-05, Modell mit dem geringesten Fehler!
+attr(v005fit.exp,"SSErr")  # 2.35502e-05
+attr(v005fit.gau,"SSErr")  # 1.873866e-05
+v005fit <- v005fit.sph
+
+##---------------------------------------------------------------
+##  4.2 Interpolation für Niederschlagszunahme >= 5%           --
+##--------------------------------------------------------------- 
+kr.005<-krige(I(deltaN>=0.05)~lon + I(lat^2) + I(lat * lon) + I(lon^3) + I(lat * lon^2),kw.sp.dat,gitter,v005fit)
+kr.005<- kr.005[europa,]
+kr.005$var1.pred <- pmax(pmin(kr.005$var1.pred,1),0)
+spplot(kr.005, zcol="var1.pred",  col.regions = get_brewer_pal("YlOrRd",n=16,plot=F), 
+       contour=T,par.settings=list(panel.background=list(col="lightblue"))) 
+spplot(kr.005, zcol="var1.var",  
+       col.regions = rev(heat.colors(100)),
+       main="MLE",par.settings=list(panel.background=list(col="lightblue"))) 
+
+##---------------------------------------------------------------
+##  4.3 Variogramm-Analyse für Niederschlagsabnahme >= 5%      --
+##---------------------------------------------------------------
+vab005<-variogram(I(deltaN<=-0.05)~lon + I(lat^2) + I(lat * lon) + I(lon^3) + 
+                  I(lat * lon^2),kw.sp.dat,cutoff=1000)
+plot(vab005)
+vab005fit.lin <- fit.variogram(vab005, vgm(0.2,"Lin",550,0))  
+plot(vab005, model=vab005fit.lin)
+vab005fit.lin
+vab005fit.sph <- fit.variogram(vab005, vgm(0.2,"Sph",550,0))
+vab005fit.sph
+plot(vab005, model=vab005fit.sph)
+vab005fit.exp <- fit.variogram(vab005, vgm(0.2,"Exp",550/4,0))
+vab005fit.exp
+plot(vab005,model=vab005fit.exp)
+vab005fit.gau <- fit.variogram(vab005, vgm(0.2,"Gau",550/sqrt(3),0))
+vab005fit.gau
+plot(vab005,model=vab005fit.gau)
+
+plot(vab005$dist, vab005$gamma,
+     pch=19, cex=1.2, col="darkred",
+     cex.lab=1.2, cex.axis=1.2,
+     xlab="Distanz", ylab="Semivarianz")
+lines(variogramLine(vab005fit.lin, maxdist = 1000), col="orange", lwd=3)
+lines(variogramLine(vab005fit.sph, maxdist = 1000), col="deepskyblue", lwd=2)
+lines(variogramLine(vab005fit.exp, maxdist = 1000), col="green3", lty=2, lwd=2)
+lines(variogramLine(vab005fit.gau, maxdist = 1000), col="indianred", lty=4, lwd=2)
+legend("bottomright", legend=c("Linear","Sphärisch","Exponentiell","Gauss"),
+       lty=c(3,1,2,4), lwd=2,
+       col=c("orange","deepskyblue","green3","indianred"))
+
+# Parameter der Modelle
+Pars.VariogrammModelle <- data.frame( Modell=c("Linear","Sphärisch","Exponential","Gauss"),
+                                      Nugget=c(vab005fit.lin$psill[1], vab005fit.sph$psill[1], vab005fit.exp$psill[1],vab005fit.gau$psill[1]),
+                                      Sill=c(sum(vab005fit.lin$psill),sum(vab005fit.sph$psill),sum(vab005fit.exp$psill), sum(vab005fit.gau$psill)),
+                                      Practical_Range= c(vab005fit.lin$range[2], vab005fit.sph$range[2], 3*vab005fit.exp$range[2], sqrt(3)*vab005fit.gau$range[2]))      
+Pars.VariogrammModelle 
+##        Modell      Nugget      Sill Practical_Range
+## 1      Linear 0.017709386 0.1480479        401.7661
+## 2   Sphärisch 0.015477990 0.1499803        549.5554
+## 3 Exponential 0.008748894 0.1645102        824.2274
+## 4       Gauss 0.025783252 0.1447334        394.8932
+attr(vab005fit.lin,"SSErr")  # 1.738995e-05
+attr(vab005fit.sph,"SSErr")  # 7.158109e-06, Modell mit dem geringesten Fehler!
+attr(vab005fit.exp,"SSErr")  # 1.814281e-05
+attr(vab005fit.gau,"SSErr")  # 1.61052e-05
+vab005fit <- vab005fit.sph
+
+##---------------------------------------------------------------
+##  4.4 Interpolation für Niederschlagsabnahme >= 5%           --
+##---------------------------------------------------------------
+kr.ab005<-krige(I(deltaN<=-0.05)~lon + I(lat^2) + I(lat * lon) + I(lon^3) + 
+                I(lat * lon^2),kw.sp.dat,gitter,vab005fit)
+kr.ab005<- kr.ab005[europa,]
+kr.ab005$var1.pred <- pmax(pmin(kr.ab005$var1.pred,1),0)
+spplot(kr.ab005, zcol="var1.pred",  col.regions = get_brewer_pal("YlOrRd",n=16,plot=F), 
+       contour=T,par.settings=list(panel.background=list(col="lightblue"))) 
+spplot(kr.ab005, zcol="var1.var",  
+       col.regions = rev(heat.colors(100)),
+       main="MLE",par.settings=list(panel.background=list(col="lightblue"))) 
+```
+
