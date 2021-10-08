@@ -60,7 +60,7 @@ Im Zuge dieser Übung wurden Software r (Version 4.0.5) und R-Pakete gstat_2.0-7
 
 Die `Biome_Europa` Shape-Datei enthält Daten über die Biome Europas, die in neun Kategorien unterteilt sind. Die Hauptkategorien sind Tundra für die nördlichsten skandinavischen Gebirge, Taiga/Forests für Nordeuropa, Temperate Broadleaf & Mixed Forests in Mitteleuropa, Mediterranean Forests, Woodlands & Scrub für die südliche Mittelmeerküste, Temperate Grassland, Savannas & Shrublands für das Schwarzmeertiefland und Temperate Conifer Forests in den Alpen, den Karpaten und den schottischen Highlands.
 
-```{r data, fig.cap="In der Übung verwendete Daten: Verteilung der Biome und Klimastationen in Europa. Die weißen Punkte sind die Standorte der Klimastationen."}
+```{r data, fig.cap="In der Übung verwendete Daten: Verteilung der Biome und Klimastationen in Europa. Die weissen Punkte sind die Standorte der Klimastationen."}
 load("europe_rain.RData")
 library(sp)
 library(tmap)
