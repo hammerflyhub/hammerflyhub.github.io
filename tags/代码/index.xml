@@ -5,7 +5,16 @@
     <link>https://hammerflyhub.github.io/tags/%E4%BB%A3%E7%A0%81/</link>
     <description>Recent content in 代码 on Hammerfly&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 02 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://hammerflyhub.github.io/tags/%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Oct 2021 23:20:38 +0200</lastBuildDate><atom:link href="https://hammerflyhub.github.io/tags/%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adobe Acrobat DC 取消同名表单域的链接</title>
+      <link>https://hammerflyhub.github.io/post/2021-10-18-adobe-acrobat-dc-%E5%8F%96%E6%B6%88%E5%90%8C%E5%90%8D%E8%A1%A8%E5%8D%95%E5%9F%9F%E7%9A%84%E9%93%BE%E6%8E%A5/</link>
+      <pubDate>Mon, 18 Oct 2021 23:20:38 +0200</pubDate>
+      
+      <guid>https://hammerflyhub.github.io/post/2021-10-18-adobe-acrobat-dc-%E5%8F%96%E6%B6%88%E5%90%8C%E5%90%8D%E8%A1%A8%E5%8D%95%E5%9F%9F%E7%9A%84%E9%93%BE%E6%8E%A5/</guid>
+      <description>在Adobe Acrobat DC 中复制表单域后新的表单域和旧的表单域里的内容会自动同步。取消同步必须手动给新表单域逐个改名，在一次复制一整页几十几百个表单域</description>
+    </item>
+    
     <item>
       <title>用DiagrammR包的Graphviz和Mermaid语法画图</title>
       <link>https://hammerflyhub.github.io/post/2021-10-02-graphviz/</link>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Adobe Acrobat DC 取消同名表单域的链接 - Hammerfly&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Hammerfly" /><meta name="description" content="在Adobe Acrobat DC 中复制表单域后新的表单域和旧的表单域里的内容会自动同步。取消同步必须手动给新表单域逐个改名，在一次复制一整页几十几百个表单域" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.88.1 with theme even" />
+
+
+<link rel="canonical" href="https://hammerflyhub.github.io/post/2021-10-18-adobe-acrobat-dc-%E5%8F%96%E6%B6%88%E5%90%8C%E5%90%8D%E8%A1%A8%E5%8D%95%E5%9F%9F%E7%9A%84%E9%93%BE%E6%8E%A5/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Adobe Acrobat DC 取消同名表单域的链接" />
+<meta property="og:description" content="在Adobe Acrobat DC 中复制表单域后新的表单域和旧的表单域里的内容会自动同步。取消同步必须手动给新表单域逐个改名，在一次复制一整页几十几百个表单域" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hammerflyhub.github.io/post/2021-10-18-adobe-acrobat-dc-%E5%8F%96%E6%B6%88%E5%90%8C%E5%90%8D%E8%A1%A8%E5%8D%95%E5%9F%9F%E7%9A%84%E9%93%BE%E6%8E%A5/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-18T23:20:38+02:00" />
+<meta property="article:modified_time" content="2021-10-18T23:20:38+02:00" />
+
+<meta itemprop="name" content="Adobe Acrobat DC 取消同名表单域的链接">
+<meta itemprop="description" content="在Adobe Acrobat DC 中复制表单域后新的表单域和旧的表单域里的内容会自动同步。取消同步必须手动给新表单域逐个改名，在一次复制一整页几十几百个表单域"><meta itemprop="datePublished" content="2021-10-18T23:20:38+02:00" />
+<meta itemprop="dateModified" content="2021-10-18T23:20:38+02:00" />
+<meta itemprop="wordCount" content="725">
+<meta itemprop="keywords" content="代码," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Adobe Acrobat DC 取消同名表单域的链接"/>
+<meta name="twitter:description" content="在Adobe Acrobat DC 中复制表单域后新的表单域和旧的表单域里的内容会自动同步。取消同步必须手动给新表单域逐个改名，在一次复制一整页几十几百个表单域"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Hammerfly</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Hammerfly</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Adobe Acrobat DC 取消同名表单域的链接</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-10-18 </span>
+        
+        
+      </div>
+    </header>
+
+    
+    <div class="post-content">
+      <p>在Adobe Acrobat DC 中复制表单域后新的表单域和旧的表单域里的内容会自动同步。取消同步必须手动给新表单域逐个改名，在一次复制一整页几十几百个表单域时非常麻烦。我在网上找到一个叫做David Vielhuber的人的博客帖子<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>,里面提到Adobe Acrobat可以用javascript给表单里的元素批量重命名。他写了一段把表单名里的.改成#的方法，我把他的代码稍微修改了一下，就可以实现让复制的新表单和旧表单取消链接，并且删除新表单的内容了。</p>
+<p>具体步骤：</p>
+<ol>
+<li>正常复制带表单的页，此时两页的表单内容会自动同步。</li>
+<li>在Acrobat的首选项（Ctrl + K）里勾选启用Acrobat JavaScript</li>
+</ol>
+<p><img src="https://pic3.zhimg.com/80/v2-3d2c9c28b79074a2aeb44ce6a51512e6_720w.jpg?source=1940ef5c" alt=""></p>
+<ol start="3">
+<li>然后Ctrl+J打开Javascript控制台。在下面的“查看”里选择“控制台”</li>
+<li>然后粘贴下面的代码，Ctrl+A全选，再Ctrl+Enter运行，几页的表单就可以分别填写不同的内容而不会自动同步啦。代码参考了Adobe的官方说明文件<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">fields</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">numFields</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">fields</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">getNthFieldName</span><span class="p">(</span><span class="nx">i</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">fields</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">source_name</span> <span class="o">=</span> <span class="nx">fields</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+
+    <span class="c1">// modifications to name
+</span><span class="c1"></span>    <span class="kd">var</span> <span class="nx">target_name</span> <span class="o">=</span> <span class="nx">source_name</span><span class="p">;</span>
+    <span class="c1">// other replacements (examples)
+</span><span class="c1"></span>    <span class="cm">/*
+</span><span class="cm">    target_name = source_name.replace(/\./g, &#39;#&#39;);
+</span><span class="cm">    target_name = target_name.toLowerCase();
+</span><span class="cm">    target_name = target_name.replace(/\s/g, &#39;&#39;);
+</span><span class="cm">    target_name = target_name.replace(/\ß/g, &#39;ss&#39;);
+</span><span class="cm">    target_name = target_name.replace(/\-|\/|\*|\.|\;|\:/g, &#39;_&#39;);
+</span><span class="cm">    */</span>
+
+    <span class="kd">var</span> <span class="nx">source_field</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getField</span><span class="p">(</span><span class="nx">source_name</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">source_field</span> <span class="o">!==</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="nx">source_field</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// debug output (if needed)
+</span><span class="c1"></span>        <span class="c1">//console.println(JSON.stringify([target_name, source_field.type, source_field.page, source_field.rect]));
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="k">in</span> <span class="nx">source_field</span><span class="p">.</span><span class="nx">page</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">target_name</span> <span class="o">=</span> <span class="nx">source_name</span> <span class="o">+</span> <span class="s2">&#34;#&#34;</span> <span class="o">+</span> <span class="nx">j</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">target_field</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">addField</span><span class="p">(</span>
+                <span class="nx">target_name</span><span class="p">,</span>
+                <span class="nx">source_field</span><span class="p">.</span><span class="nx">type</span><span class="p">,</span>
+                <span class="nx">source_field</span><span class="p">.</span><span class="nx">page</span><span class="p">[</span><span class="nx">j</span><span class="p">],</span>
+                <span class="nx">source_field</span><span class="p">.</span><span class="nx">rect</span>
+            <span class="p">);</span>
+            <span class="kd">var</span> <span class="nx">props</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s1">&#39;alignment&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;borderStyle&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;buttonAlignX&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;buttonAlignY&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;buttonFitBounds&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;buttonScaleHow&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;buttonScaleWhen&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;comb&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;display&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;doNotScroll&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;editable&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;exportValues&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;fileSelect&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;fillColor&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;highlight&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;lineWidth&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;multiline&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;multipleSelection&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;numItems&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;password&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;readonly&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;richText&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;richValue&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;rotation&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;strokeColor&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;style&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;textColor&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;textFont&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;textSize&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;userName&#39;</span><span class="p">,</span>
+            <span class="p">];</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">p</span> <span class="o">&lt;</span> <span class="nx">props</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">p</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">testField</span><span class="p">(</span><span class="nx">source_field</span><span class="p">,</span> <span class="nx">props</span><span class="p">[</span><span class="nx">p</span><span class="p">]))</span> <span class="p">{</span>
+                    <span class="nx">target_field</span><span class="p">[</span><span class="nx">props</span><span class="p">[</span><span class="nx">p</span><span class="p">]]</span> <span class="o">=</span> <span class="nx">source_field</span><span class="p">[</span><span class="nx">props</span><span class="p">[</span><span class="nx">p</span><span class="p">]];</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">j</span> <span class="o">===</span> <span class="s1">&#39;0&#39;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">target_field</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">source_field</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">removeField</span><span class="p">(</span><span class="nx">source_name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">testField</span><span class="p">(</span><span class="nx">field</span><span class="p">,</span> <span class="nx">prop</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">tprop</span> <span class="o">=</span> <span class="nx">field</span><span class="p">[</span><span class="nx">prop</span><span class="p">];</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><figure><img src="https://pic3.zhimg.com/80/v2-2a315047cbbc227a95a0ace6fff3afe4_720w.jpg?source=1940ef5c"/><figcaption>
+            <h4>Acrobat里的Javascript控制台</h4>
+        </figcaption>
+</figure>
+
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://vielhuber.de/zh-cn/blog-zh-cn/pdf-form-fields-en-masse/">https://vielhuber.de/zh-cn/blog-zh-cn/pdf-form-fields-en-masse/</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://opensource.adobe.com/dc-acrobat-sdk-docs/acrobatsdk/pdfs/acrobatsdk_jsdevguide.pdf">https://opensource.adobe.com/dc-acrobat-sdk-docs/acrobatsdk/pdfs/acrobatsdk_jsdevguide.pdf</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E4%BB%A3%E7%A0%81/">代码</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/2021-10-12-%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE-%E5%9C%9F%E5%A3%A4%E5%AF%86%E5%BA%A6%E5%9C%A8%E6%B0%B8%E4%B9%85%E8%90%8E%E8%94%AB%E7%82%B9-pwp%E5%AF%B9%E5%9C%9F%E5%A3%A4%E6%B0%B4%E5%90%AB%E9%87%8F%E7%9A%84%E5%BD%B1%E5%93%8D/">
+            <span class="next-text nav-default">本科毕业论文思维导图：土壤密度在永久萎蔫点 PWP对土壤水含量的影响</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>Hammerfly</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
