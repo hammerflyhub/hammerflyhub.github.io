@@ -3,27 +3,41 @@
   
   <url>
     <loc>https://hammerflyhub.github.io/</loc>
-    <lastmod>2022-06-09T17:39:53+02:00</lastmod>
+    <lastmod>2022-08-20T18:53:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hammerflyhub.github.io/post/2022-08-20-wind-blowing/</loc>
+    <lastmod>2022-08-20T18:53:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://hammerflyhub.github.io/post/</loc>
-    <lastmod>2022-06-09T17:39:53+02:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://hammerflyhub.github.io/post/2022-06-09-reclaim-ai/</loc>
-    <lastmod>2022-06-09T17:39:53+02:00</lastmod>
+    <lastmod>2022-08-20T18:53:06+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://hammerflyhub.github.io/tags/</loc>
+    <lastmod>2022-08-20T18:53:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hammerflyhub.github.io/tags/%E8%8B%B1%E8%AF%AD/</loc>
+    <lastmod>2022-08-20T18:53:06+02:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://hammerflyhub.github.io/post/2022-06-09-reclaim-ai/</loc>
     <lastmod>2022-06-09T17:39:53+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
